@@ -45,6 +45,13 @@ const metrics=a.metrics||[];
 const comparison=a.comparison||[];
 const updateLog=a.updateLog||[[a.date,"記事公開"]];
 
+
+const clusterContext = (a.tags||[]).includes("大井町")
+  ? `<div class="cluster-context"><strong>大井町をまとめて読む</strong><a href="topic-oimachi.html">大井町マンション完全ガイド →</a></div>`
+  : ((a.tags||[]).includes("50年ローン")
+      ? `<div class="cluster-context"><strong>50年ローンをまとめて読む</strong><a href="topic-50year.html">50年住宅ローン完全ガイド →</a></div>`
+      : '');
+
 const summaryHtml = summary3.length ? `
   <section class="summary3">
     <div class="summary3-title"><span>3</span> この記事を3行で</div>
@@ -94,6 +101,7 @@ document.getElementById('articleBody').innerHTML=`
   <div class="article-datebar"><span>公開 ${a.date}</span><span>情報確認 ${a.checkedAt||a.date}</span><span>読了目安 約${readingMinutes}分</span></div>
   <div class="article-trust-line"><span>✓ 出典確認</span><span>✓ 事実と見解を分離</span><a href="policy.html">編集方針を見る →</a></div>
   <p class="lead">${a.excerpt}</p>
+  ${clusterContext}
   ${summaryHtml}
   ${tocHtml}
   <div class="pointbox"><strong>この記事のポイント</strong><ul>${(a.points||[]).map(x=>`<li>${x}</li>`).join('')}</ul></div>
