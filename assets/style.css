@@ -579,3 +579,176 @@ footer{
 .service-card b{display:block;color:#174f83;margin-bottom:5px}
 .profile-quote-v6{background:#fff8e8;border-left:6px solid #f1ba27;border-radius:14px;padding:18px 20px;font-size:18px;font-weight:800;color:#3b4d5f}
 @media(max-width:800px){.profile-intro-card{grid-template-columns:1fr}.profile-intro-card img{max-width:320px;margin:auto}.profile-grid-2,.service-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:70px 1fr}}
+
+
+/* =========================
+   Ver.7 polish
+   ========================= */
+
+/* Home profile message: no overlap with face */
+.profile-image-wrap{
+  overflow:hidden;
+}
+.profile-message{
+  position:relative;
+  margin:10px 10px 0;
+  padding:10px 14px;
+  background:#fff9dc;
+  color:#21466d;
+  border:1px solid #eadb9e;
+  border-radius:16px;
+  font-weight:800;
+  font-size:13px;
+  line-height:1.45;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(72,101,130,.08);
+}
+.profile-message::before{
+  content:"";
+  position:absolute;
+  top:-8px;
+  left:50%;
+  transform:translateX(-50%) rotate(45deg);
+  width:14px;
+  height:14px;
+  background:#fff9dc;
+  border-left:1px solid #eadb9e;
+  border-top:1px solid #eadb9e;
+}
+.speech{display:none!important;}
+
+/* Pop / friendly typography on all non-home pages */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap');
+
+.subpage{
+  font-family:"M PLUS Rounded 1c","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+  background:
+    linear-gradient(180deg,#f4fbff 0,#ffffff 260px);
+  color:#17324d;
+}
+.subpage .simple-header{
+  background:linear-gradient(180deg,#eaf7ff,#f8fcff);
+  border-bottom:1px solid #d9eaf5;
+  box-shadow:0 4px 14px rgba(31,103,157,.05);
+}
+.subpage .simple-header .container{
+  padding-top:4px;
+  padding-bottom:4px;
+}
+.subpage .brand{
+  font-family:"M PLUS Rounded 1c","Yu Gothic UI",sans-serif;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.subpage h1,
+.subpage h2,
+.subpage h3{
+  font-family:"M PLUS Rounded 1c","Yu Gothic UI",sans-serif;
+  letter-spacing:.01em;
+}
+.subpage .article-body h1,
+.subpage .listing-page h1,
+.subpage .profile-page h1{
+  font-weight:900;
+  color:#113b69;
+}
+.subpage .article-body h2,
+.subpage .profile-page h2{
+  border-left:0;
+  padding-left:0;
+  position:relative;
+  font-weight:900;
+  color:#174d82;
+}
+.subpage .article-body h2::after,
+.subpage .profile-page h2::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:5px;
+  background:#ffd84d;
+  border-radius:999px;
+  margin-top:7px;
+}
+.subpage .article-body,
+.subpage .profile-page,
+.subpage .listing-page{
+  background:#fff;
+  border:1px solid #e0ecf4;
+  border-radius:22px;
+  box-shadow:0 10px 28px rgba(28,91,137,.07);
+}
+.subpage .article-body{
+  padding:28px 34px 38px;
+}
+.subpage .profile-page{
+  margin-top:30px;
+  margin-bottom:45px;
+  padding:34px;
+}
+.subpage .listing-page{
+  margin-top:30px;
+  margin-bottom:45px;
+  padding:30px;
+}
+.subpage .profile-card,
+.subpage .cta{
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(31,92,138,.06);
+}
+.subpage .pointbox{
+  background:#f1f8ff!important;
+  border-radius:16px!important;
+}
+.subpage .author-view{
+  background:#fff8e8!important;
+  border-left:0!important;
+  border-radius:16px!important;
+  box-shadow:inset 0 0 0 1px #f6e3af;
+}
+.subpage .article-card{
+  border-radius:18px;
+}
+.subpage .article-card h3{
+  font-weight:800;
+}
+.subpage .btn,
+.subpage button{
+  font-family:"M PLUS Rounded 1c","Yu Gothic UI",sans-serif;
+  border-radius:999px;
+}
+.subpage .search-large input{
+  font-family:"M PLUS Rounded 1c","Yu Gothic UI",sans-serif;
+}
+.subpage .profile-hero{
+  background:linear-gradient(135deg,#eef8ff,#fff);
+  padding:20px;
+  border-radius:20px;
+  border:1px solid #dfeef7;
+}
+.subpage .profile-hero img{
+  border-radius:22px;
+  box-shadow:0 8px 20px rgba(25,82,126,.10);
+}
+.subpage .profile-page section{
+  background:#fbfdff;
+  border:1px solid #e4eef5;
+  border-radius:18px;
+  padding:18px 20px;
+  margin-top:16px;
+}
+.subpage .profile-page section p{
+  margin-bottom:0;
+}
+.subpage .profile-page section ul{
+  margin-bottom:0;
+}
+
+@media(max-width:900px){
+  .subpage .article-body,
+  .subpage .profile-page,
+  .subpage .listing-page{
+    border-radius:16px;
+    padding:22px;
+  }
+}
