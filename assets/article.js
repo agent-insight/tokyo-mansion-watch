@@ -23,7 +23,7 @@ const source=a.sourceUrl
   ? `<div class="source-box">
        <div class="source-head"><span class="trust-badge">${sourceBadge}</span><span class="checked">確認日 ${a.checkedAt||a.date}</span></div>
        <strong>情報源</strong>
-       <a href="${a.sourceUrl}" target="_blank" rel="noopener">${a.sourceName} ↗</a>
+       <a href="${a.sourceUrl}" target="_blank" rel="noopener noreferrer">公式・一次情報を確認：${a.sourceName} ↗</a>
        <span>事実関係は上記情報源を確認し、住宅購入・売却への影響は山口が独自に整理しています。</span>
      </div>`
   : `<div class="source-box"><div class="source-head"><span class="trust-badge">${sourceBadge}</span></div><strong>解説</strong><span>${a.sourceName}</span></div>`;
@@ -51,6 +51,23 @@ const clusterContext = (a.tags||[]).includes("大井町")
   : ((a.tags||[]).includes("50年ローン")
       ? `<div class="cluster-context"><strong>50年ローンをまとめて読む</strong><a href="topic-50year.html">50年住宅ローン完全ガイド →</a></div>`
       : '');
+
+const usefulTools=[];
+if(a.category==='住宅ローン' || (a.tags||[]).some(t=>['住宅ローン','50年ローン','35年ローン','金利1%','金利1.5%','金利2%'].includes(t))){
+  usefulTools.push({href:'tools/mortgage-calculator/',title:'住宅ローン返済シミュレーター',desc:'月々返済・総利息・5年/10年/15年後の残債を計算'});
+}
+if(a.category==='東京23区市況' || (a.tags||[]).some(t=>['東京23区','REINS','市況','坪単価'].includes(t))){
+  usefulTools.push({href:'market-data.html',title:'東京23区・中古マンション市況データ',desc:'成約件数・成約㎡単価・在庫を定点観測'});
+}
+const usefulToolsHtml=usefulTools.length ? `<aside class="article-useful-tools"><strong>関連ツール・データ</strong>${usefulTools.map(t=>`<a href="${t.href}"><b>${t.title}</b><span>${t.desc}</span></a>`).join('')}</aside>` : '';
+
+const topicInternalLinks=[];
+if((a.tags||[]).includes('大井町')) topicInternalLinks.push({href:'topic-oimachi.html',text:'大井町マンション完全ガイド'});
+if((a.tags||[]).includes('50年ローン') || a.category==='住宅ローン') topicInternalLinks.push({href:'topic-50year.html',text:'50年住宅ローン完全ガイド'});
+if((a.tags||[]).some(t=>['湾岸','勝どき','晴海','豊洲','月島','タワーマンション'].includes(t))) topicInternalLinks.push({href:'area-bay.html',text:'湾岸タワマンガイド'});
+if((a.tags||[]).some(t=>['品川区','大崎','五反田','品川シーサイド'].includes(t))) topicInternalLinks.push({href:'area-shinagawa.html',text:'品川区マンションガイド'});
+if((a.tags||[]).some(t=>['目黒区','中目黒','祐天寺','都立大学','学芸大学'].includes(t))) topicInternalLinks.push({href:'area-meguro.html',text:'目黒区マンションガイド'});
+const topicInternalHtml=topicInternalLinks.length ? `<div class="in-article-links"><span>あわせて読む</span>${topicInternalLinks.slice(0,3).map(x=>`<a href="${x.href}">${x.text} →</a>`).join('')}</div>` : '';
 
 const summaryHtml = summary3.length ? `
   <section class="summary3">
@@ -102,11 +119,13 @@ document.getElementById('articleBody').innerHTML=`
   <div class="article-trust-line"><span>✓ 出典確認</span><span>✓ 事実と見解を分離</span><a href="policy.html">編集方針を見る →</a></div>
   <p class="lead">${a.excerpt}</p>
   ${clusterContext}
+  ${usefulToolsHtml}
   ${summaryHtml}
   ${tocHtml}
   <div class="pointbox"><strong>この記事のポイント</strong><ul>${(a.points||[]).map(x=>`<li>${x}</li>`).join('')}</ul></div>
   ${metricsHtml}
   ${sections}
+  ${topicInternalHtml}
   ${comparisonHtml}
   ${source}
   <h2>この記事が関係する人</h2>

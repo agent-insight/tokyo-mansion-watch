@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>住宅ローン返済シミュレーター｜35年・40年・50年を比較｜東京マンションウォッチ</title>
+<meta name="description" content="借入額・金利・返済期間を入力すると、毎月返済額・総返済額・総利息・5年後/10年後/15年後の残債を無料で比較できます。">
+<link rel="canonical" href="https://agent-insight.github.io/tokyo-mansion-watch/tools/mortgage-calculator/">
+<link rel="icon" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="住宅ローン返済シミュレーター｜東京マンションウォッチ">
+<meta property="og:description" content="35年・40年・50年ローンを月々返済・総利息・将来残債まで比較。">
+<meta property="og:url" content="https://agent-insight.github.io/tokyo-mansion-watch/tools/mortgage-calculator/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"住宅ローン返済シミュレーター","applicationCategory":"FinanceApplication","operatingSystem":"Web","isAccessibleForFree":true,"url":"https://agent-insight.github.io/tokyo-mansion-watch/tools/mortgage-calculator/","author":{"@type":"Person","name":"山口 功記"}}</script>
+</head>
+<body class="subpage tool-page">
+<header class="simple-header"><div class="container tool-header"><a class="brand" href="../../index.html">東京マンションウォッチ</a><nav><a href="../../market-data.html">市況データ</a><a href="../../topic-50year.html">50年ローン特集</a><a href="../../contact.html">相談</a></nav></div></header>
+<main class="container tool-shell">
+  <div class="breadcrumb"><a href="../../index.html">トップ</a><span>›</span><span>住宅ローン返済シミュレーター</span></div>
+  <section class="tool-hero">
+    <span class="eyebrow">FREE TOOL</span>
+    <h1>住宅ローン返済シミュレーター</h1>
+    <p>「月々いくら？」だけでなく、<strong>総利息と将来の残債</strong>まで確認できます。35年・40年・50年の比較にも使えます。</p>
+  </section>
+
+  <section class="calculator-layout">
+    <form id="mortgageForm" class="calculator-form" novalidate>
+      <h2>条件を入力</h2>
+      <label>借入額 <span><input id="loanAmount" type="number" inputmode="numeric" min="100" max="100000" step="100" value="10000" aria-describedby="amountHelp"> 万円</span></label>
+      <small id="amountHelp">例：1億円なら「10000」</small>
+      <label>金利（年利） <span><input id="annualRate" type="number" inputmode="decimal" min="0" max="10" step="0.01" value="1.00"> %</span></label>
+      <label>返済期間 <span><select id="loanYears"><option value="35">35年</option><option value="40">40年</option><option value="45">45年</option><option value="50" selected>50年</option></select></span></label>
+      <label>比較する期間 <span><select id="compareYears"><option value="35" selected>35年</option><option value="40">40年</option><option value="45">45年</option><option value="50">50年</option></select></span></label>
+      <button type="submit" class="calc-primary">計算する</button>
+      <button type="button" id="presetBtn" class="calc-secondary">1億円・1％・50年に戻す</button>
+      <p class="calc-note">元利均等・ボーナス返済なしの概算です。実際の返済額は金融機関の計算方法、融資手数料、団信上乗せ等で異なります。</p>
+      <div id="calcError" class="calc-error" role="alert" aria-live="polite"></div>
+    </form>
+
+    <div class="calculator-results" aria-live="polite">
+      <div class="calc-result-main"><small>毎月返済額</small><strong id="monthlyPayment">—</strong><span id="monthlySub">—</span></div>
+      <div class="calc-result-grid">
+        <div><small>総返済額</small><strong id="totalPayment">—</strong></div>
+        <div><small>総利息</small><strong id="totalInterest">—</strong></div>
+      </div>
+      <h2>将来のローン残高</h2>
+      <div class="balance-grid">
+        <div><small>5年後</small><strong id="balance5">—</strong></div>
+        <div><small>10年後</small><strong id="balance10">—</strong></div>
+        <div><small>15年後</small><strong id="balance15">—</strong></div>
+      </div>
+      <div class="compare-box">
+        <div><span id="currentTermLabel">50年</span><strong id="currentMonthly">—</strong></div>
+        <span class="compare-arrow">↔</span>
+        <div><span id="compareTermLabel">35年</span><strong id="compareMonthly">—</strong></div>
+        <p id="compareDiff">—</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <h2>50年ローンは「毎月返済」だけで決めない</h2>
+    <div class="tool-explain-grid">
+      <div><strong>① 月々返済</strong><p>返済期間を長くすると毎月負担は下がりやすくなります。</p></div>
+      <div><strong>② 総利息</strong><p>返済期間が長いほど、完済までの利息負担は増えやすくなります。</p></div>
+      <div><strong>③ 売却時の残債</strong><p>住み替えの可能性がある方は5年・10年・15年後の残債も重要です。</p></div>
+    </div>
+    <div class="tool-links"><a href="../../topic-50year.html">50年住宅ローン完全ガイド →</a><a href="../../article.html?id=loan-35-vs-50">35年 vs 50年を詳しく読む →</a><a href="../../article.html?id=loan-rate-stress">金利1％・1.5％・2％比較 →</a></div>
+  </section>
+
+  <section class="citation-invite">
+    <strong>このシミュレーターは引用・紹介OKです</strong>
+    <p>ブログ・SNS・記事等で結果を紹介する場合は、出典として「東京マンションウォッチ 住宅ローン返済シミュレーター」へのリンクを付けていただけると幸いです。</p>
+  </section>
+
+  <section class="consult-soft"><div><strong>物件価格まで含めて相談したい方へ</strong><p>返済額だけでなく、購入価格・諸費用・将来売却まで含めて整理できます。</p></div><a href="../../contact.html">山口に相談する →</a></section>
+</main>
+<footer><div class="container"><strong>東京マンションウォッチ</strong><p>TERASS 不動産エージェント 山口功記</p></div></footer>
+<script src="../../assets/mortgage-calculator.js"></script>
+<script src="../../assets/analytics.js"></script>
+</body></html>
