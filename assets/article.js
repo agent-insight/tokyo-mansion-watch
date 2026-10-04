@@ -76,6 +76,7 @@ document.getElementById('articleBody').innerHTML=`
   <div class="breadcrumb"><a href="index.html">トップ</a><span>›</span><a href="category.html?cat=${encodeURIComponent(a.category)}">${a.category}</a></div>
   <div class="meta"><span>${a.category}</span><time>${a.date}</time></div>
   <h1>${a.title}</h1>
+  <img class="article-hero-image" src="${a.image||'assets/thumb-market.jpg'}" alt="${a.title}" onerror="this.src='assets/thumb-market.jpg'">
   <div class="article-datebar"><span>公開 ${a.date}</span><span>情報確認 ${a.checkedAt||a.date}</span></div>
   <div class="article-trust-line"><span>✓ 出典確認</span><span>✓ 事実と見解を分離</span><a href="policy.html">編集方針を見る →</a></div>
   <p class="lead">${a.excerpt}</p>

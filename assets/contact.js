@@ -1,5 +1,5 @@
 
-const TERASS_EMAIL = "YOUR_TERASS_EMAIL@example.com";
+const TERASS_EMAIL = "kouki.yamaguchi@terass.com";
 
 document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();

@@ -1,20 +1,31 @@
-# 東京マンションウォッチ Ver.14
+# 東京マンションウォッチ Ver.16
 
-## Ver.14
-- 全体フォントを丸みのある読みやすい書体へ変更
-- 記事サムネイルをテーマ別に整理
-- 画像なしカードを防ぐフォールバック追加
-- カテゴリページにカテゴリ別の大きな画像を追加
-- 問い合わせページを新設
-- フォーム入力からTERASSメール宛のメール作成画面を開く仕組みを実装
-- 購入 / 売却 / 住み替え / ローン / セカンドオピニオンを選択可能
+## 本番連携
+- LINE相談リンク設定済み
+  https://line.me/ti/p/DipNvXkjll
+- LINE IDはサイト上に表示しない方式
+- GA4 設定済み
+  測定ID: G-HZMQ3B6MT1
+- Google Search Console HTMLファイル確認を実装
+  /google4cde12fc9a39f2d2.html
+- プライバシーポリシー新設
+- メール問い合わせ先
+  kouki.yamaguchi@terass.com
 
-## メール送信先の設定
-assets/contact.js の下記1行だけ変更：
-const TERASS_EMAIL = "YOUR_TERASS_EMAIL@example.com";
+## GitHubアップロード後の作業
+1. Ver.16をリポジトリへ上書き
+2. GitHub Pagesの反映を待つ
+3. ブラウザで
+   https://agent-insight.github.io/tokyo-mansion-watch/google4cde12fc9a39f2d2.html
+   を開き、文字列が表示されることを確認
+4. Search Consoleに戻り「確認」
+5. Search Console → サイトマップで
+   sitemap.xml
+   を送信
+6. Google Analyticsのリアルタイムでアクセスが記録されるか確認
 
-山口さんのTERASSメールアドレスに差し替えれば有効になります。
-
-※GitHub Pagesだけではサーバーから直接メール送信できないため、
-現状は mailto 方式。
-将来は Formspree 等を接続すると、ブラウザから直接送信できます。
+## UI
+- PCヘッダーにLINE相談
+- スマホ固定バーをLINE / メールの2ボタン化
+- 問い合わせページでLINE / メールを選択
+- プロフィール・記事にも相談導線追加

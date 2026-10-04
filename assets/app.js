@@ -4,7 +4,10 @@ function card(a){
   return `<a class="article-card" href="article.html?id=${encodeURIComponent(a.id)}">
     <img src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
     <div class="pad">
-      <span class="pill">${a.category}</span>
+      <div class="card-meta-line">
+        <span class="pill">${a.category}</span>
+        ${a.date>='2026.10.04'?'<span class="new-badge">NEW</span>':''}
+      </div>
       <div class="date">${a.date}</div>
       <h3>${a.title}</h3>
       <p>${a.excerpt}</p>
@@ -12,7 +15,11 @@ function card(a){
   </a>`;
 }
 const featured = document.getElementById('featuredGrid');
-if(featured) featured.innerHTML = A.slice(0,4).map(card).join('');
+if(featured){
+  const priorityIds=['reins-latest-aug','boj-125-mortgage','oi-west-e-2026','bay-stock'];
+  const featuredItems=priorityIds.map(id=>A.find(x=>x.id===id)).filter(Boolean);
+  featured.innerHTML=featuredItems.map(card).join('');
+}
 
 const news = document.getElementById('latestNewsGrid');
 if(news) news.innerHTML = A.slice(4,10).map(a=>`
