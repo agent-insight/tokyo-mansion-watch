@@ -12,6 +12,34 @@ function estimateReadingMinutes(article){
 function escapeHtml(s){ return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
 
+
+function articleContentType(a){
+  const tags=a.tags||[];
+  if(tags.includes('比較')) return '比較';
+  if(a.category==='東京23区マンション市況' || tags.includes('REINS')) return '市況';
+  if(a.category==='住宅ローン') return 'ローン';
+  if(a.category==='売却・住み替え') return '売却';
+  if(tags.includes('単身者向け') || tags.includes('単身')) return '単身';
+  return '保存版';
+}
+
+function freshnessBadge(a){
+  if(!window.TMW_GOV) return '';
+  const f=window.TMW_GOV.freshnessFor(a);
+  if(f.type==='evergreen') return '';
+  const checked=window.TMW_GOV.formatChecked(a);
+  return `<span class="freshness-badge ${f.type}">${f.label}${checked?` ${checked}`:''}</span>`;
+}
+
+function freshnessNotice(a){
+  if(!window.TMW_GOV) return '';
+  const f=window.TMW_GOV.freshnessFor(a);
+  if(f.type==='stale' || f.type==='review'){
+    return `<div class="freshness-notice ${f.type}"><strong>${f.label}</strong><span>市況・金利・制度は変わるため、最新情報は「3分ウォッチ」「制度ウォッチ」もあわせて確認してください。</span><a href="${a.category==='住宅ローン'?'rules.html':'brief.html'}">最新情報を見る →</a></div>`;
+  }
+  return '';
+}
+
 function naturalizeText(text){
   let s=String(text||'');
   // 固い「です。」の連続を避け、雑誌・コラムに近いリズムへ。
@@ -52,7 +80,7 @@ let h2Index=0;
 const sections=(a.body||[]).map(([t,v])=>{
   if(t==='h2'){
     h2Index++;
-    const heading=v==='山口の見解'?'現場ではこう見ています':v;
+    const heading=v==='エージェント山口の見解'?'現場ではこう見ています':v;
     return `<h2 id="toc-${h2Index}">${heading}</h2>`;
   }
   if(t==='view') return `<div class="author-view human-view"><strong>${a.viewLabel || '私ならこう見ます'}</strong><p>${naturalizeText(v)}</p></div>`;
@@ -154,7 +182,8 @@ document.getElementById('articleBody').innerHTML=`
   <div class="meta"><span>${a.category}</span><time>${a.date}</time></div>
   <h1>${a.title}</h1>
   <img class="article-hero-image" fetchpriority="high" decoding="async" src="${a.image||'assets/thumb-market.jpg'}" alt="${a.title}" onerror="this.src='assets/thumb-market.jpg'">
-  <div class="article-datebar"><span>${a.date}</span><span>約${readingMinutes}分</span></div>
+  <div class="article-datebar"><span>${a.date}</span><span>${articleContentType(a)}</span><span>約${readingMinutes}分</span>${freshnessBadge(a)}</div>
+  ${freshnessNotice(a)}
   <p class="lead">${naturalizeText(a.excerpt)}</p>
   <div class="author-intro-note"><span>山口より</span><p>${a.openingNote || voiceIntro(a)}</p></div>
   ${clusterContext}

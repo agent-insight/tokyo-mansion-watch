@@ -16,7 +16,7 @@ function card(a){
 }
 const featured = document.getElementById('featuredGrid');
 if(featured){
-  const priorityIds=['single-50year-invest','loan-variable-vs-fixed','budget-8000-oimachi-vs-osaki','area-kachidoki-vs-harumi'];
+  const priorityIds=(window.TMW_RANKING&&window.TMW_RANKING.featured)||['single-50year-invest','loan-variable-vs-fixed','budget-8000-oimachi-vs-osaki','area-kachidoki-vs-harumi'];
   const featuredItems=priorityIds.map(id=>A.find(x=>x.id===id)).filter(Boolean);
   featured.innerHTML=featuredItems.map(card).join('');
 }

@@ -15,22 +15,7 @@
   <meta property="og:image" content="https://agent-insight.github.io/tokyo-mansion-watch/assets/og-default.svg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/style.css">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"東京マンションウォッチ",
-    "url":"https://agent-insight.github.io/tokyo-mansion-watch/",
-    "description":"TERASS 不動産エージェント 山口功記が、一次情報と実務経験から読み解く東京23区の住宅・マンション情報",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://agent-insight.github.io/tokyo-mansion-watch/search.html?q={search_term_string}",
-      "query-input":"required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZMQ3B6MT1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -120,8 +105,16 @@
 <main id="main">
   <div class="container site-update-bar v30-update">
     <span>最終更新：2026年10月4日</span>
-    <div><a href="all-articles.html">全記事</a><a href="topics.html">テーマ別</a><a href="single.html">単身者向け</a></div>
+    <div><a href="brief.html">3分ウォッチ</a><a href="for-you.html">あなた向け</a><a href="updates.html">更新</a><a href="rules.html">制度</a></div>
   </div>
+
+
+  <section class="container return-visit-panel">
+    <div class="return-status" data-visit-status>
+      <strong>更新情報</strong><span>前回訪問以降の変更を確認できます。</span>
+    </div>
+    <a href="updates.html">前回からの更新を見る →</a>
+  </section>
 
   <section class="hero-shell">
     <div class="container hero-layout">
@@ -160,38 +153,58 @@
 
   <section class="container home-purpose">
     <div class="section-heading v30-heading">
-      <div><span class="eyebrow">START HERE</span><h2>目的から選ぶ</h2><small>最初に近いものを選んでください</small></div>
+      <div><span class="eyebrow">START HERE</span><h2>自分に近い入口から</h2><small>必要な情報だけを短く見られます</small></div>
     </div>
-    <div class="purpose-grid">
-      <a class="purpose-card buy" href="category.html?cat=購入ノウハウ">
+    <div class="purpose-grid" data-smart-container>
+      <a class="purpose-card buy" data-topic="compare" href="category.html?cat=購入ノウハウ">
         <span>BUY</span><strong>マンションを買いたい</strong>
         <p>予算・物件選び・資産性・内見の見方</p><b>購入ガイドへ →</b>
       </a>
-      <a class="purpose-card sell" href="category.html?cat=売却・住み替え">
+      <a class="purpose-card sell" data-topic="sell" href="category.html?cat=売却・住み替え">
         <span>SELL / MOVE</span><strong>売却・住み替えをしたい</strong>
         <p>査定・売出価格・売り先行／買い先行</p><b>売却・住み替えへ →</b>
       </a>
-      <a class="purpose-card single" href="single.html">
+      <a class="purpose-card single" data-topic="single" href="single.html">
         <span>SINGLE</span><strong>一人で購入したい</strong>
         <p>30〜50㎡・1LDK/2LDK・50年ローン</p><b>単身者向けへ →</b>
       </a>
-      <a class="purpose-card loan" href="topic-50year.html">
+      <a class="purpose-card loan" data-topic="loan" href="topic-50year.html">
         <span>LOAN</span><strong>住宅ローンを比較したい</strong>
         <p>35年・40年・50年、変動・固定、銀行比較</p><b>ローンガイドへ →</b>
       </a>
     </div>
   </section>
 
+
+  <section class="container personalized-home" data-personalized-box hidden></section>
+
+  <section class="container home-brief-entry">
+    <a class="home-brief-main" href="brief.html">
+      <div>
+        <span class="eyebrow">3 MINUTES WATCH</span>
+        <h2>今週、変わったことだけ。</h2>
+        <p>市況・住宅ローン・再開発の「前回からの変化」を3分で。忙しい方はここだけでOKです。</p>
+      </div>
+      <div class="home-brief-arrow">3分で見る →</div>
+    </a>
+    <div class="home-brief-side">
+      <a href="library.html"><strong>保存版</strong><span>判断に迷ったら戻る知識集 →</span></a>
+      <a href="rules.html"><strong>制度ウォッチ</strong><span>住宅ローン減税・税制 →</span></a>
+      <a href="tools/mortgage-calculator/"><strong>計算</strong><span>ローンを自分の条件で確認 →</span></a>
+    </div>
+  </section>
+  <div class="container weekly-share-link"><a href="weekly.html">今週の3点だけを見る →</a></div>
+
   <section class="container market-now v30-market">
     <div class="section-heading">
-      <div><span class="eyebrow">MARKET NOW</span><h2>いま押さえておきたい数字</h2><small>2026年10月4日時点</small></div>
+      <div><span class="eyebrow">MARKET NOW</span><h2>いま押さえておきたい数字</h2><small>2026年10月4日時点・公式情報確認済</small></div>
       <a href="market-data.html">市況データを詳しく見る →</a>
     </div>
-    <div class="metric-grid">
-      <a class="metric-card" href="article.html?id=boj-125-mortgage"><span>日銀・政策金利</span><strong>1.25％程度</strong><small>住宅ローンへの影響</small></a>
-      <a class="metric-card" href="article.html?id=reins-latest-aug"><span>23区 成約件数</span><strong>1,265件</strong><small>2026年8月・REINS</small></a>
-      <a class="metric-card" href="article.html?id=reins-latest-aug"><span>23区 成約㎡単価</span><strong>132.69万円</strong><small>2026年8月・REINS</small></a>
-      <a class="metric-card" href="market-data.html"><span>首都圏 在庫</span><strong>48,235件</strong><small>前年同月比 +8.2%</small></a>
+    <div class="metric-grid" data-smart-container>
+      <a class="metric-card" data-topic="loan" href="article.html?id=boj-125-mortgage"><span>日銀・政策金利</span><strong>1.25％程度</strong><small>住宅ローンへの影響</small></a>
+      <a class="metric-card" data-topic="market" href="article.html?id=reins-latest-aug"><span>23区 成約件数</span><strong>1,265件</strong><small>2026年8月・REINS</small></a>
+      <a class="metric-card" data-topic="market" href="article.html?id=reins-latest-aug"><span>23区 成約㎡単価</span><strong>132.69万円</strong><small>2026年8月・REINS</small></a>
+      <a class="metric-card" data-topic="market" href="market-data.html"><span>首都圏 在庫</span><strong>48,235件</strong><small>前年同月比 +8.2%</small></a>
     </div>
   </section>
 
@@ -251,14 +264,14 @@
   <section class="container" id="latest">
     <div class="section-heading">
       <div><span class="eyebrow">FEATURED</span><h2>山口のおすすめ記事</h2><small>購入相談でよく話すテーマを中心に</small></div>
-      <a href="all-articles.html">全記事を見る →</a>
+      <a href="all-articles.html">記事を絞り込んで探す →</a>
     </div>
     <div id="featuredGrid" class="featured-grid"></div>
   </section>
 
   <section class="container latest-news-section v30-latest">
     <div class="section-heading">
-      <div><span class="eyebrow">LATEST</span><h2>最新記事</h2><small>市況・ローン・再開発などを更新</small></div>
+      <div><span class="eyebrow">LATEST</span><h2>最近追加した記事</h2><small>時間があるときに読みたい更新分</small></div>
       <a href="all-articles.html">記事一覧 →</a>
     </div>
     <div id="latestNewsGrid" class="latest-news-grid"></div>
@@ -309,6 +322,7 @@
   </footer>
 
   <script src="assets/articles.js"></script>
+<script src="assets/content-ranking.js"></script>
   <script src="assets/app.js"></script>
 
   <div class="mobile-contact-bar dual">
@@ -316,5 +330,7 @@
     <a class="mobile-mail" href="contact.html">✉ メール相談</a>
   </div>
   <script src="assets/analytics.js"></script>
+<script src="assets/smart-personalization.js"></script>
+<script src="assets/visit-tracker.js"></script>
 </body>
 </html>

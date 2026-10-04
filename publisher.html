@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公開アシスタント｜東京マンションウォッチ</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="subpage publisher-page">
+<header class="simple-header">
+  <div class="container tool-header">
+    <a class="brand" href="index.html">東京マンションウォッチ</a>
+    <nav><a href="ops.html">運営メモ</a><a href="brief.html">3分ウォッチ</a></nav>
+  </div>
+</header>
+
+<main class="container publisher-shell">
+  <div class="breadcrumb"><a href="index.html">トップ</a><span>›</span><span>公開アシスタント</span></div>
+
+  <section class="publisher-hero">
+    <span class="eyebrow">PUBLISH WORKFLOW</span>
+    <h1>週次更新は、ここで仕上げる。</h1>
+    <p>自動タスクが出した <code>brief-data.js</code> 用オブジェクトを貼り付けると、形式チェック・プレビュー・LINE文・差し込み用コードをまとめて作れます。</p>
+  </section>
+
+  <section class="publisher-step">
+    <div class="publisher-step-head"><b>1</b><div><strong>自動タスクの出力を貼る</strong><span>JavaScriptオブジェクト1件分だけでOK</span></div></div>
+    <textarea id="publisherInput" spellcheck="false" placeholder='例：
+{
+  id:"2026-10-12",
+  date:"2026-10-12",
+  label:"2026年10月12日",
+  readTime:"約3分",
+  headline:"...",
+  intro:"...",
+  verified:true,
+  items:[ ... ]
+}'></textarea>
+    <div class="publisher-actions">
+      <button id="publisherValidate">形式を確認</button>
+      <button id="publisherSample" class="secondary">サンプルを入れる</button>
+      <button id="publisherClear" class="secondary">クリア</button>
+    </div>
+    <div id="publisherStatus" class="publisher-status"></div>
+  </section>
+
+  <section class="publisher-step">
+    <div class="publisher-step-head"><b>2</b><div><strong>公開前チェック</strong><span>制度・数値・出典の確認漏れを防ぐ</span></div></div>
+    <div class="publish-checklist">
+      <label><input type="checkbox" id="checkPrimary"> 数字・制度は一次情報で確認した</label>
+      <label><input type="checkbox" id="checkDate"> 公表日・対象期間・確認日を確認した</label>
+      <label><input type="checkbox" id="checkFactOpinion"> 事実と「エージェント山口の見解」を分けた</label>
+      <label><input type="checkbox" id="checkNoHype"> 「必ず上がる」「今が買い時」等の断定をしていない</label>
+    </div>
+  </section>
+
+  <section class="publisher-step">
+    <div class="publisher-step-head"><b>3</b><div><strong>サイト表示プレビュー</strong><span>顧客が実際に見る形</span></div></div>
+    <div id="publisherPreview" class="publisher-preview-empty">形式確認後に表示されます。</div>
+  </section>
+
+  <section class="publisher-step">
+    <div class="publisher-step-head"><b>4</b><div><strong>顧客共有文</strong><span>既存顧客へのLINE・メールで使える短文</span></div></div>
+    <textarea id="publisherLine" readonly></textarea>
+    <div class="publisher-actions">
+      <button id="copyLine">LINE文をコピー</button>
+    </div>
+  </section>
+
+  <section class="publisher-step">
+    <div class="publisher-step-head"><b>5</b><div><strong>サイト反映用コード</strong><span>assets/brief-data.js の配列先頭に追加</span></div></div>
+    <textarea id="publisherCode" readonly></textarea>
+    <div class="publisher-actions">
+      <button id="copyCode">コードをコピー</button>
+    </div>
+    <p class="publisher-note">※この画面はブラウザ上でコードを生成するだけです。GitHubへ自動書き込みはしません。</p>
+  </section>
+</main>
+
+<script src="assets/publisher-helper.js"></script>
+</body>
+</html>
