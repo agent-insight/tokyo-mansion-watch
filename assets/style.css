@@ -2928,3 +2928,43 @@ main{
   .author-intro-note{padding:13px 14px;margin:15px 0 20px}
   .author-intro-note p{font-size:13px!important}
 }
+
+
+/* Ver.27 editorial pass */
+.author-intro-note{
+  position:relative;
+  background:#f8fbfd!important;
+  border-left:3px solid #79a7c5!important;
+}
+.author-intro-note>span{
+  text-transform:none!important;
+  letter-spacing:.02em!important;
+}
+.human-view>strong{
+  font-size:12.5px!important;
+  color:#6b552f!important;
+}
+.human-source{
+  padding:10px 0!important;
+  background:transparent!important;
+  border:0!important;
+  border-top:1px solid #e3eaee!important;
+  border-radius:0!important;
+}
+.human-source summary{
+  cursor:pointer;
+  font-size:10.5px;
+  font-weight:800;
+  color:#7b8d98;
+  margin-bottom:7px;
+}
+.human-source a{display:inline-block;margin-right:8px}
+.article-body h2{
+  letter-spacing:0!important;
+}
+.article-body p{
+  text-wrap:pretty;
+}
+@media(max-width:720px){
+  .human-source{margin-top:24px!important}
+}
