@@ -91,7 +91,7 @@ document.getElementById('articleBody').innerHTML=`
   ${updatesHtml}
   <section class="related-section">
     <h2>関連記事</h2>
-    <div class="card-grid">${related.map(x=>`<a class="article-card" href="article.html?id=${x.id}"><img src="${x.image}" alt=""><div class="pad"><span class="pill">${x.category}</span><h3>${x.title}</h3></div></a>`).join('')}</div>
+    <div class="card-grid">${related.map(x=>`<a class="article-card" href="article.html?id=${x.id}"><img src="${x.image||'assets/thumb-market.jpg'}" alt="${x.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'"><div class="pad"><span class="pill">${x.category}</span><h3>${x.title}</h3></div></a>`).join('')}</div>
   </section>
   <nav class="prevnext">
     ${newer?`<a href="article.html?id=${newer.id}"><small>← 新しい記事</small><span>${newer.title}</span></a>`:'<span></span>'}

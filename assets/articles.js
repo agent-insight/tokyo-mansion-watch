@@ -3,7 +3,7 @@ window.ARTICLES = [
 {
 id:"boj-125-mortgage",
 title:"日銀の政策金利1.25％時代へ。住宅ローンはどこまで上がる？購入予算への影響を実例で解説",
-category:"住宅ローン",date:"2026.10.04",image:"assets/loan.svg",
+category:"住宅ローン",date:"2026.10.04",image:"assets/thumb-loan.jpg",
 tags:["日銀","政策金利","住宅ローン","変動金利","購入予算"],
 excerpt:"日銀は無担保コールO/N物を1.25％程度で推移させる方針。住宅ローンへの波及経路と、東京23区で高額借入をする際の考え方を整理します。",
 audience:["購入検討者","住み替え","住宅ローン利用者"],
@@ -40,7 +40,7 @@ body:[
 {
 id:"mufg-oct-rate",
 title:"三菱UFJ銀行の住宅ローン、2026年10月は変動1.195％・固定10年3.75％。どう比較すべき？",
-category:"住宅ローン",date:"2026.10.04",image:"assets/loan.svg",
+category:"住宅ローン",date:"2026.10.04",image:"assets/thumb-loan.jpg",
 tags:["三菱UFJ銀行","変動金利","固定10年","住宅ローン","銀行比較"],
 excerpt:"三菱UFJ銀行の2026年10月新規借入金利を確認。変動と固定の数字だけでなく、団信・借入期間・諸費用・審査まで比較します。",
 audience:["購入検討者","共働き","借り換え"],
@@ -75,7 +75,7 @@ body:[
 {
 id:"reins-latest-aug",
 title:"REINSは2026年8月度まで公開。東京23区中古マンション市況は『価格・在庫・成約数』をどう読む？",
-category:"東京23区マンション市況",date:"2026.10.04",image:"assets/market-photo.jpg",
+category:"東京23区マンション市況",date:"2026.10.04",image:"assets/thumb-market.jpg",
 tags:["REINS","中古マンション","東京23区","在庫","成約件数","㎡単価"],
 excerpt:"東日本レインズは9月10日に2026年8月度マーケットウォッチを公開。最新値を見るときに、購入者と売主がチェックすべき指標を解説します。",
 audience:["購入検討者","売却検討者","住み替え"],
@@ -112,7 +112,7 @@ body:[
 {
 id:"oi-west-e-2026",
 title:"大井町駅西口E地区ガイドラインが2026年9月策定。再開発で大井町のマンション価値はどう変わる？",
-category:"再開発",date:"2026.10.04",image:"assets/redevelopment-photo.jpg",
+category:"再開発",date:"2026.10.04",image:"assets/thumb-redevelop.jpg",
 tags:["大井町","西口E地区","再開発","品川区","資産価値"],
 excerpt:"品川区が大井町駅西口E地区まちづくりガイドラインを策定。再開発を価格材料として見る際のポイントを購入者・売主目線で整理します。",
 audience:["大井町購入検討者","品川区売却検討者","住み替え"],
@@ -147,7 +147,7 @@ body:[
 {
 id:"shinagawa-cityhall-site",
 title:"品川区庁舎跡地活用、2026年10月に事業者対話へ。広町・大井町の将来像と住宅市場への影響",
-category:"再開発",date:"2026.10.03",image:"assets/redevelopment-photo.jpg",
+category:"再開発",date:"2026.10.03",image:"assets/thumb-redevelop.jpg",
 tags:["品川区庁舎跡地","広町","大井町","再開発","品川区"],
 excerpt:"現庁舎跡地の活用検討が進行中。10月13日～23日のサウンディング対話を前に、広町地区の位置付けと不動産への影響を整理します。",
 audience:["品川区購入検討者","大井町売却検討者","住み替え"],
@@ -182,7 +182,7 @@ body:[
 {
 id:"loan-50",
 title:"1億円を金利1％で借りると、35年は月28.2万円・50年は21.2万円。50年ローンをどう使う？",
-category:"住宅ローン",date:"2026.10.02",image:"assets/loan.svg",
+category:"住宅ローン",date:"2026.10.02",image:"assets/thumb-loan.jpg",
 tags:["50年ローン","1億円","住宅ローン","35年ローン","返済額"],
 excerpt:"1億円・金利1％・元利均等で比較すると、50年ローンは月約7万円下がる一方、総利息は増えます。実需での使い方を解説します。",
 audience:["20代・30代","高額物件検討者","共働き","単身"],
@@ -220,7 +220,7 @@ body:[
 {
 id:"shinagawa-resale",
 title:"品川区で将来売却しやすい中古マンションは？大井町・大崎・五反田で見る7つの条件",
-category:"品川区・目黒区",date:"2026.09.30",image:"assets/shinagawa.svg",
+category:"品川区・目黒区",date:"2026.09.30",image:"assets/thumb-buy.jpg",
 tags:["品川区","大井町","大崎","五反田","資産価値","中古マンション"],
 excerpt:"『駅近だから売りやすい』だけでは不十分。品川区で将来のリセールを考えるときに見る7項目を具体的に整理します。",
 audience:["購入検討者","住み替え","ファミリー"],
@@ -248,7 +248,7 @@ body:[
 {
 id:"bay-stock",
 title:"湾岸タワマンは在庫が増えたら値下がりする？勝どき・晴海・豊洲で見るべき5つの数字",
-category:"湾岸・タワーマンション",date:"2026.09.29",image:"assets/bay-photo.jpg",
+category:"湾岸・タワーマンション",date:"2026.09.29",image:"assets/thumb-bay.jpg",
 tags:["湾岸","勝どき","晴海","豊洲","タワーマンション","在庫"],
 excerpt:"在庫件数だけでは判断できない湾岸市場。同一棟の競合、坪単価、階数、方角、販売期間までセットで見ます。",
 audience:["湾岸購入検討者","タワマン売却検討者"],
@@ -272,7 +272,7 @@ body:[
 {
 id:"buy-check",
 title:"中古マンション購入前に確認したい7項目。内見だけでは分からない管理・修繕・価格の見方",
-category:"購入ノウハウ",date:"2026.09.28",image:"assets/home.svg",
+category:"購入ノウハウ",date:"2026.09.28",image:"assets/thumb-buy.jpg",
 tags:["購入ノウハウ","管理","修繕積立金","価格妥当性","中古マンション"],
 excerpt:"室内がきれいでも、それだけで買ってはいけません。契約前に管理・修繕・相場・ローンまで確認する7項目をまとめます。",
 audience:["初めて購入","購入検討者","単身女性","ファミリー"],
@@ -300,7 +300,7 @@ body:[
 {
 id:"sell-price",
 title:"中古マンションの売出価格はどう決める？『高く出しすぎて売れない』を防ぐ3段階の価格戦略",
-category:"売却・住み替え",date:"2026.09.26",image:"assets/sell.svg",
+category:"売却・住み替え",date:"2026.09.26",image:"assets/thumb-sell.jpg",
 tags:["売却","査定","売出価格","価格改定","住み替え"],
 excerpt:"査定額と売れる価格は別です。チャレンジ価格・相場価格・早期売却価格を分けて考える方法を解説します。",
 audience:["売却検討者","住み替え"],
@@ -322,7 +322,7 @@ body:[
 {
 id:"second-opinion",
 title:"『この物件、買って大丈夫？』中古マンションのセカンドオピニオンで確認する10項目",
-category:"購入ノウハウ",date:"2026.09.24",image:"assets/practice.svg",
+category:"購入ノウハウ",date:"2026.09.24",image:"assets/thumb-buy.jpg",
 tags:["セカンドオピニオン","価格妥当性","資産価値","住宅ローン","管理"],
 excerpt:"すでに紹介を受けている物件でもOK。価格・管理・ローン・将来売却まで第三者目線で確認する項目をまとめます。",
 audience:["購入検討者","初めて購入","単身女性","ファミリー"],
@@ -342,7 +342,7 @@ body:[
 {
 id:"new-condo-aug-2026",
 title:"首都圏新築マンション8月は平均9,770万円・発売1,140戸。東京23区478戸、供給減は中古に追い風？",
-category:"東京23区マンション市況",date:"2026.10.04",image:"assets/market-photo.jpg",
+category:"東京23区マンション市況",date:"2026.10.04",image:"assets/thumb-market.jpg",
 tags:["新築マンション","平均価格","供給戸数","東京23区","不動産経済研究所"],
 excerpt:"8月の首都圏新築は平均9,770万円、発売1,140戸。東京23区は478戸。数字の背景と中古マンション市場への影響を整理します。",
 audience:["購入検討者","売却検討者","住み替え"],
@@ -378,7 +378,7 @@ body:[
 {
 id:"tokyo23-used-price-rent-aug",
 title:"東京23区中古3LDKは70㎡換算8,637万円、家賃30.5万円。『買うvs借りる』をどう考える？",
-category:"東京23区マンション市況",date:"2026.10.04",image:"assets/market-photo.jpg",
+category:"東京23区マンション市況",date:"2026.10.04",image:"assets/thumb-market.jpg",
 tags:["東京23区","中古マンション","家賃","買うvs借りる","MFS"],
 excerpt:"MFSの8月分析では東京23区中古価格8,637万円、家賃30.5万円。購入価格と賃料の両方が高い局面での判断軸を整理します。",
 audience:["賃貸から購入","購入検討者","住み替え"],
@@ -414,7 +414,7 @@ body:[
 {
 id:"management-fee-2025",
 title:"中古マンションの管理費・修繕積立金、平均月2万7,805円。2025年度は修繕積立金が5.6％上昇",
-category:"不動産実務",date:"2026.10.04",image:"assets/practice.svg",
+category:"不動産実務",date:"2026.10.04",image:"assets/thumb-management.jpg",
 tags:["管理費","修繕積立金","REINS","中古マンション","ランニングコスト"],
 excerpt:"東日本レインズによる2025年度集計では、管理費と修繕積立金の合計は月平均2万7,805円。購入時の見落としやすい固定費を解説します。",
 audience:["購入検討者","売却検討者","タワマン検討者"],

@@ -36,14 +36,31 @@ const configs={
   }
 };
 const cfg=configs[cat]||{lead:"関連記事をまとめています。",points:[]};
+const categoryImages={
+  "東京23区マンション市況":"assets/thumb-market.jpg",
+  "品川区・目黒区":"assets/thumb-buy.jpg",
+  "湾岸・タワーマンション":"assets/thumb-bay.jpg",
+  "住宅ローン":"assets/thumb-loan.jpg",
+  "再開発":"assets/thumb-redevelop.jpg",
+  "購入ノウハウ":"assets/thumb-buy.jpg",
+  "売却・住み替え":"assets/thumb-sell.jpg",
+  "不動産実務":"assets/thumb-management.jpg"
+};
 document.title=cat+'｜東京マンションウォッチ';
 document.getElementById('pageTitle').textContent=cat;
-document.getElementById('categoryIntro').innerHTML=`<span class="eyebrow">CATEGORY</span><h2>${cat}</h2><p>${cfg.lead}</p>`;
+document.getElementById('categoryIntro').innerHTML=`
+          <div class="category-intro-copy">
+            <span class="eyebrow">CATEGORY</span>
+            <h2>${cat}</h2>
+            <p>${cfg.lead}</p>
+          </div>
+          <img src="${categoryImages[cat]||'assets/thumb-market.jpg'}" alt="${cat}">
+        `;
 document.getElementById('categoryPoints').innerHTML=`<ul>${cfg.points.map(x=>`<li>${x}</li>`).join('')}</ul>`;
 const list=all.filter(a=>a.category===cat).sort((a,b)=>b.date.localeCompare(a.date));
 document.getElementById('list').innerHTML=list.length?list.map(a=>`
   <a class="category-row" href="article.html?id=${a.id}">
-    <img src="${a.image}" alt="">
+    <img src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
     <div>
       <div class="all-article-meta"><time>${a.date}</time>${a.sourceType?`<b>${a.sourceType}</b>`:''}</div>
       <h3>${a.title}</h3><p>${a.excerpt}</p>

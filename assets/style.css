@@ -1229,3 +1229,140 @@ footer{
 .article-body .source-box{margin-top:34px}
 .article-card h3{line-height:1.5}
 .article-card p{line-height:1.65}
+
+/* =========================
+   Ver.14 soft typography + contact
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap');
+
+body,
+button,
+input,
+select,
+textarea{
+  font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+}
+body{font-weight:500}
+.site-logo strong,
+.hero-content h1,
+.section-heading h2,
+.article-body h1,
+.article-body h2,
+.profile-page h1,
+.profile-page h2{
+  font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic UI",sans-serif;
+}
+.article-body p,
+.article-card p,
+.category-row p,
+.all-article-copy p{
+  font-weight:400;
+  letter-spacing:.01em;
+}
+.article-card h3,
+.category-row h3,
+.all-article-copy h2{
+  font-weight:800;
+}
+
+.article-card img{
+  aspect-ratio:5/3;
+  height:auto;
+  object-fit:cover;
+  background:#eaf4fb;
+}
+.category-intro-visual{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:20px;
+  align-items:center;
+}
+.category-intro-visual img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+.contact-page{max-width:1100px;padding:34px 0 50px}
+.contact-hero{
+  background:linear-gradient(135deg,#eaf7ff,#fff);
+  border:1px solid #dcebf5;
+  border-radius:24px;
+  padding:28px 30px;
+  margin-bottom:20px;
+  box-shadow:0 10px 28px rgba(28,91,137,.07);
+}
+.contact-hero h1{font-size:34px;margin:6px 0}
+.contact-layout{
+  display:grid;
+  grid-template-columns:1fr 330px;
+  gap:22px;
+}
+.contact-form-card,.contact-profile,.contact-points{
+  background:#fff;
+  border:1px solid #e0ebf2;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 8px 22px rgba(28,91,137,.06);
+}
+.contact-note,.form-caution{font-size:12px;color:#6d8193}
+.contact-form-card form{display:grid;gap:14px}
+.contact-form-card label{
+  display:grid;
+  gap:6px;
+  font-size:13px;
+  font-weight:800;
+  color:#214b71;
+}
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea{
+  width:100%;
+  border:1px solid #d5e3ed;
+  border-radius:13px;
+  padding:12px 13px;
+  background:#fbfdff;
+  font-size:14px;
+  outline:none;
+}
+.contact-form-card textarea{resize:vertical}
+.contact-form-card input:focus,
+.contact-form-card select:focus,
+.contact-form-card textarea:focus{
+  border-color:#69a9e2;
+  box-shadow:0 0 0 3px rgba(69,143,209,.10);
+}
+.contact-submit{
+  border:0;
+  background:linear-gradient(180deg,#ff7b36,#ff651f);
+  color:#fff;
+  font-weight:900;
+  border-radius:999px;
+  padding:14px 18px;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(255,106,34,.20);
+}
+.contact-profile img{
+  width:100%;
+  border-radius:16px;
+  max-height:220px;
+  object-fit:cover;
+}
+.contact-profile h3{font-size:23px;margin:12px 0 2px}
+.contact-profile p{color:#6d8193}
+.contact-profile ul{padding-left:20px}
+.contact-points{margin-top:14px}
+.contact-points p{
+  background:#f4f9fd;
+  padding:9px 11px;
+  border-radius:12px;
+  margin:7px 0;
+  font-size:13px;
+}
+@media(max-width:760px){
+  .contact-layout{grid-template-columns:1fr}
+  .category-intro-visual{grid-template-columns:1fr}
+  .category-intro-visual img{order:-1;height:170px}
+}

@@ -2,7 +2,7 @@
 const A = window.ARTICLES || [];
 function card(a){
   return `<a class="article-card" href="article.html?id=${encodeURIComponent(a.id)}">
-    <img src="${a.image}" alt="">
+    <img src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
     <div class="pad">
       <span class="pill">${a.category}</span>
       <div class="date">${a.date}</div>
