@@ -1,4 +1,4 @@
-# 東京マンションウォッチ Ver.2
+# 東京マンションウォッチ Ver.3
 
 GitHub Pages 公開先想定:
 https://agent-insight.github.io/tokyo-mansion-watch/
@@ -6,7 +6,7 @@ https://agent-insight.github.io/tokyo-mansion-watch/
 リポジトリ名:
 `tokyo-mansion-watch`
 
-## Ver.2で追加したもの
+## Ver.3で追加したもの
 - SEO title / description / canonical
 - OGP / Twitter Card
 - favicon
@@ -33,3 +33,11 @@ https://agent-insight.github.io/tokyo-mansion-watch/
 - Google Analytics
 - 問い合わせフォーム
 - 記事管理をMarkdown/CMS化
+
+
+## Ver.3追加
+- 明るいブルー基調へ刷新
+- 丸みのある見出し・カード
+- オレンジの相談CTA
+- プロフィール用キャラクター画像
+- ヒーロー画像を明るい東京イメージへ変更
