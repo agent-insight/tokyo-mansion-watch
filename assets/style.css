@@ -441,3 +441,85 @@ footer{
   .listing-page .card-grid{grid-template-columns:1fr}
   .profile-hero{display:block}
 }
+
+/* Ver.5 polish */
+.hero-content h1{
+  white-space:nowrap;
+  font-size:58px;
+  letter-spacing:-.035em;
+}
+.hero-content h1 span{
+  white-space:nowrap;
+}
+.hero-content{
+  width:68%;
+}
+.hero-main{
+  background-position:center center;
+}
+.profile-panel{
+  align-self:stretch;
+}
+.profile-copy p{
+  line-height:1.7;
+}
+.article-card .pad{
+  min-height:205px;
+}
+.category-tiles{
+  margin-top:4px;
+}
+.cat-tile{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.cat-tile:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(21,82,129,.10);
+}
+@media(max-width:1350px){
+  .hero-content h1{font-size:50px}
+  .hero-content{width:72%}
+}
+@media(max-width:1100px){
+  .hero-content h1{font-size:44px}
+  .hero-content{width:78%}
+}
+@media(max-width:900px){
+  .hero-content h1{
+    white-space:normal;
+    font-size:48px;
+  }
+}
+@media(max-width:640px){
+  .hero-content h1{
+    white-space:normal;
+    font-size:40px;
+  }
+}
+
+.beginner-section{padding-bottom:6px}
+.beginner-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.beginner-card{
+  background:linear-gradient(180deg,#ffffff,#f8fcff);
+  border:1px solid #dfeaf2;
+  border-radius:18px;
+  padding:18px 20px;
+  box-shadow:0 8px 20px rgba(21,82,129,.06);
+}
+.beginner-card strong{
+  display:block;
+  font-size:17px;
+  color:#123e6c;
+  margin-bottom:5px;
+}
+.beginner-card span{
+  font-size:13px;
+  color:#6e8397;
+}
+@media(max-width:900px){
+  .beginner-grid{grid-template-columns:1fr}
+}
