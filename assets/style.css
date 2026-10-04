@@ -618,7 +618,6 @@ footer{
 .speech{display:none!important;}
 
 /* Pop / friendly typography on all non-home pages */
-500;700;800;900&display=swap');
 
 .subpage{
   font-family:"M PLUS Rounded 1c","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
@@ -1233,7 +1232,6 @@ footer{
 /* =========================
    Ver.14 soft typography + contact
    ========================= */
-500;700;800;900&display=swap');
 
 body,
 button,
@@ -1843,4 +1841,333 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .area-hub-hero h1{font-size:28px}
   .check-grid{grid-template-columns:1fr}
   .footer-grid-v18{grid-template-columns:1fr;gap:8px}
+}
+
+/* =========================
+   Ver.19 readability polish
+   ========================= */
+
+/* Desktop content width: comfortable, not over-expanded */
+@media(min-width:1200px){
+  .container{
+    width:min(1380px,90%);
+  }
+}
+
+/* Header breathing room */
+.header-main{
+  gap:22px;
+}
+.header-tools{
+  gap:10px;
+}
+.header-search{
+  min-width:360px;
+}
+.nav-bar{
+  scrollbar-width:none;
+}
+.nav-bar::-webkit-scrollbar{display:none}
+
+/* Hero: slightly calmer hierarchy */
+.hero-layout{
+  gap:18px;
+}
+.hero-content{
+  width:64%;
+  padding:48px 50px;
+}
+.hero-content h1{
+  font-size:58px;
+  line-height:1.08;
+}
+.hero-content h2{
+  font-size:21px;
+  line-height:1.55;
+}
+.hero-content p{
+  font-size:16px;
+  line-height:1.8;
+}
+.profile-copy{
+  padding:16px 12px 8px;
+}
+.profile-copy h3{
+  font-size:24px;
+}
+.profile-copy p{
+  font-size:13.5px;
+  line-height:1.75;
+}
+.profile-copy li{
+  font-size:13px;
+  line-height:1.55;
+}
+
+/* Section rhythm */
+.section-heading{
+  margin-top:24px;
+  margin-bottom:13px;
+}
+.section-heading h2{
+  font-size:25px;
+  line-height:1.3;
+}
+.section-heading small{
+  font-size:12px;
+}
+
+/* Article cards: increase legibility */
+.featured-grid{
+  gap:16px;
+}
+.article-card{
+  overflow:hidden;
+  border:1px solid #dde8f0;
+}
+.article-card .pad{
+  padding:16px 16px 18px;
+}
+.article-card h3{
+  font-size:18px;
+  line-height:1.5;
+  margin:8px 0 7px;
+}
+.article-card p{
+  font-size:13px;
+  line-height:1.75;
+}
+.article-card .date{
+  font-size:11.5px;
+}
+
+/* Market cards */
+.metric-card{
+  padding:19px 18px;
+}
+.metric-card strong{
+  font-size:27px;
+}
+
+/* Profile page: wider, more editorial and easier to scan */
+.profile-page-v6{
+  max-width:1180px;
+  padding:42px 0 64px;
+}
+.profile-intro-card{
+  grid-template-columns:280px 1fr;
+  gap:34px;
+  padding:30px;
+}
+.profile-intro-card h1{
+  font-size:38px;
+  line-height:1.2;
+}
+.profile-intro-card .lead-copy{
+  font-size:18px;
+  line-height:1.75;
+}
+.profile-intro-card p{
+  font-size:14px;
+  line-height:1.85;
+}
+.profile-badges span{
+  font-size:12px;
+  padding:7px 12px;
+}
+.profile-section-v6{
+  margin-top:20px;
+  padding:26px 28px;
+}
+.profile-section-v6 h2{
+  font-size:23px;
+  margin-bottom:16px;
+}
+.profile-section-v6 p,
+.timeline-item div,
+.profile-point p,
+.service-card span{
+  font-size:14px;
+  line-height:1.85;
+}
+.timeline-item{
+  padding:11px 0;
+}
+.profile-point{
+  padding:19px;
+}
+.profile-point h3{
+  font-size:16px;
+  margin-bottom:8px;
+}
+.service-grid{
+  gap:12px;
+}
+.service-card{
+  padding:17px;
+}
+.profile-quote-v6{
+  font-size:18px;
+  line-height:1.65;
+  padding:19px 22px;
+}
+
+/* Subpages: consistent header */
+.subpage .simple-header .container{
+  max-width:1180px;
+  padding:15px 0;
+}
+.subpage .simple-header .brand{
+  font-size:20px;
+}
+.subpage .simple-header .subtitle{
+  margin-top:2px;
+  font-size:11.5px;
+  color:#6a8092;
+}
+
+/* Article body */
+.subpage .article-body{
+  max-width:930px;
+}
+.article-body h1{
+  font-size:34px;
+  line-height:1.4;
+}
+.article-body h2{
+  font-size:24px;
+  line-height:1.5;
+}
+.article-body p{
+  font-size:15.5px;
+  line-height:1.95;
+}
+.article-body .lead{
+  font-size:18px;
+  line-height:1.9;
+}
+
+/* Consultation strip: clearer but not loud */
+.quick-consult-strip{
+  padding:16px 19px;
+  margin-top:16px;
+}
+.quick-consult-strip strong{
+  font-size:15px;
+}
+.quick-consult-strip span{
+  font-size:12.5px;
+  margin-top:2px;
+}
+.quick-consult-actions a{
+  min-width:110px;
+  text-align:center;
+}
+
+/* Home latest-news rows */
+.news-row{
+  padding:15px 18px;
+}
+.news-title{
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* Footer readability */
+.global-footer,
+footer{
+  font-size:13px;
+}
+
+/* At common laptop widths */
+@media(max-width:1280px){
+  .container{width:min(1180px,92%)}
+  .site-logo strong{font-size:27px}
+  .header-tagline{font-size:14px;padding-left:16px}
+  .header-search{min-width:300px}
+  .hero-content h1{font-size:50px}
+  .hero-content{padding:42px 42px}
+  .hero-layout{grid-template-columns:minmax(0,1fr) 330px}
+}
+
+/* Tablet/mobile */
+@media(max-width:900px){
+  .hero-content{width:74%}
+  .profile-page-v6{width:min(94%,100%)}
+  .profile-intro-card{
+    grid-template-columns:220px 1fr;
+    gap:22px;
+  }
+  .profile-intro-card h1{font-size:32px}
+}
+@media(max-width:760px){
+  .hero-content{
+    width:100%;
+    padding:32px 24px;
+  }
+  .hero-content h1{font-size:38px}
+  .hero-content h2{font-size:19px}
+  .hero-content p{font-size:14px}
+  .profile-intro-card{
+    grid-template-columns:1fr;
+    padding:20px;
+  }
+  .profile-intro-card img{
+    max-width:240px;
+  }
+  .profile-section-v6{
+    padding:20px;
+  }
+  .article-body h1{font-size:27px}
+  .article-body h2{font-size:21px}
+}
+
+/* Make content density calmer */
+.market-now,
+.latest-news-section,
+.ranking-section,
+.category-section,
+.consultation-section,
+.archive-section,
+.area-focus-section{
+  margin-top:22px;
+}
+
+.subpage-header-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.subpage-utility-nav{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+.subpage-utility-nav a{
+  font-size:12px;
+  font-weight:800;
+  color:#315e82;
+  padding:8px 10px;
+  border-radius:999px;
+}
+.subpage-utility-nav a:hover{
+  background:#edf6fc;
+}
+.subpage-utility-nav .subpage-line{
+  background:#20b95a;
+  color:#fff;
+  padding:9px 13px;
+}
+@media(max-width:760px){
+  .subpage-header-row{
+    display:block;
+  }
+  .subpage-utility-nav{
+    margin-top:9px;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .subpage-utility-nav::-webkit-scrollbar{display:none}
 }
