@@ -10,9 +10,15 @@ const sections=a.body.map(([t,v])=>{
   return `<p>${v}</p>`;
 }).join('');
 
+const sourceBadge = a.sourceType || (a.sourceUrl ? "外部情報" : "実務解説");
 const source = a.sourceUrl
-  ? `<div class="source-box"><strong>情報源</strong><a href="${a.sourceUrl}" target="_blank" rel="noopener">${a.sourceName} ↗</a><span>※内容は公開情報をもとに山口が実需向けに整理しています。</span></div>`
-  : `<div class="source-box"><strong>解説</strong><span>${a.sourceName}</span></div>`;
+  ? `<div class="source-box">
+       <div class="source-head"><span class="trust-badge">${sourceBadge}</span><span class="checked">確認日 ${a.checkedAt||a.date}</span></div>
+       <strong>情報源</strong>
+       <a href="${a.sourceUrl}" target="_blank" rel="noopener">${a.sourceName} ↗</a>
+       <span>事実関係は上記情報源を確認し、住宅購入・売却への影響は山口が独自に整理しています。</span>
+     </div>`
+  : `<div class="source-box"><div class="source-head"><span class="trust-badge">${sourceBadge}</span></div><strong>解説</strong><span>${a.sourceName}</span></div>`;
 
 const related = all
   .filter(x=>x.id!==a.id)
@@ -26,6 +32,7 @@ const related = all
 
 document.getElementById('articleBody').innerHTML=`
   <div class="meta"><span>${a.category}</span><time>${a.date}</time></div>
+  <div class="article-trust-line"><span>✓ 出典確認</span><span>✓ 山口の見解を分離</span><a href="policy.html">編集方針を見る →</a></div>
   <h1>${a.title}</h1>
   <p class="lead">${a.excerpt}</p>
   <div class="pointbox"><strong>この記事のポイント</strong><ul>${a.points.map(x=>`<li>${x}</li>`).join('')}</ul></div>
