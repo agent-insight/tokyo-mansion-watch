@@ -12,7 +12,11 @@
     const href=a.getAttribute('href')||'';
     const text=(a.textContent||'').trim().slice(0,80);
 
-    if(href.includes('line.me/')){
+    if(a.dataset && a.dataset.officialSource){
+      send('official_source_click',{source:a.dataset.officialSource,link_url:href,page_location:location.href});
+    }else if(href.includes('tools/mortgage-calculator/')){
+      send('mortgage_tool_click',{link_text:text,link_url:href,page_location:location.href});
+    }else if(href.includes('line.me/')){
       send('line_contact_click',{link_text:text,page_location:location.href});
     }else if(href==='contact.html' || href.endsWith('/contact.html')){
       send('contact_page_click',{link_text:text,page_location:location.href});
