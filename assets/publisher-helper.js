@@ -68,9 +68,7 @@
     const items=(obj.items||[]).map(it=>`■ ${it.title}
 ${it.text}
 
-エージェント山口の見解：${it.yamaguchi}`).join('
-
-');
+エージェント山口の見解：${it.yamaguchi}`).join('\n\n');
     return `こんにちは、TERASSの山口です😊
 
 今週のマンション・住宅ローン情報を、重要な3点だけまとめました。
@@ -91,9 +89,7 @@ ${items}
 ${it.text}
 
 エージェント山口の見解
-${it.yamaguchi}`).join('
-
-');
+${it.yamaguchi}`).join('\n\n');
     return `こんにちは、TERASSの山口です。
 
 今週の東京マンション市場・住宅ローンについて、購入や売却を考えるうえで押さえておきたいポイントを3つに絞りました。
@@ -108,8 +104,7 @@ TERASS
   }
 
   function makeInstagram(obj){
-    const points=(obj.items||[]).map(it=>`・${it.title}`).join('
-');
+    const points=(obj.items||[]).map(it=>`・${it.title}`).join('\n');
     const view=(obj.items||[]).map(it=>it.yamaguchi).filter(Boolean)[0]||'';
     return `【今週の東京マンション 3分ウォッチ】
 
@@ -142,6 +137,9 @@ ${view}
         preview.className='publisher-preview-empty';
         preview.textContent='不足項目を直すとプレビューできます。';
         line.value='';
+        if(mail) mail.value='';
+        if(mailSubject) mailSubject.value='';
+        if(instagram) instagram.value='';
         code.value='';
         return;
       }

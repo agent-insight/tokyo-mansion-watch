@@ -47,6 +47,18 @@ const categoryImages={
   "不動産実務":"assets/thumb-management.jpg"
 };
 document.title=cat+'｜東京マンションウォッチ';
+
+const categoryCanonical='https://agent-insight.github.io/tokyo-mansion-watch/category.html?cat='+encodeURIComponent(cat);
+let canonicalEl=document.querySelector('link[rel="canonical"]');
+if(!canonicalEl){
+  canonicalEl=document.createElement('link');
+  canonicalEl.rel='canonical';
+  document.head.appendChild(canonicalEl);
+}
+canonicalEl.href=categoryCanonical;
+let descEl=document.querySelector('meta[name="description"]');
+if(descEl) descEl.setAttribute('content', cfg.lead);
+
 document.getElementById('pageTitle').textContent=cat;
 document.getElementById('categoryIntro').innerHTML=`
           <div class="category-intro-copy">

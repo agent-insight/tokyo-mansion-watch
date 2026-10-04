@@ -1,5 +1,18 @@
-
 (function(){
+  const GA_ID='G-HZMQ3B6MT1';
+  if(typeof window.gtag !== 'function'){
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    const ga=document.createElement('script');
+    ga.async=true;
+    ga.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(ga);
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+  }
+
+
+
   function send(name, params){
     if(typeof window.gtag === 'function'){
       window.gtag('event', name, params || {});

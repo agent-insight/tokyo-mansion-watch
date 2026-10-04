@@ -140,7 +140,7 @@ img{display:block;max-width:100%}
   overflow:hidden;
   background:
     linear-gradient(90deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.76) 38%,rgba(255,255,255,.05) 70%),
-    url("hero-waterfront.png") center/cover no-repeat;
+    url("hero-waterfront.webp") center/cover no-repeat;
   box-shadow:var(--shadow);
   position:relative;
 }
