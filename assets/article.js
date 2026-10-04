@@ -34,6 +34,7 @@ document.getElementById('articleBody').innerHTML=`
   <div class="meta"><span>${a.category}</span><time>${a.date}</time></div>
   <div class="article-trust-line"><span>✓ 出典確認</span><span>✓ 山口の見解を分離</span><a href="policy.html">編集方針を見る →</a></div>
   <h1>${a.title}</h1>
+  <div class="article-datebar"><span>公開 ${a.date}</span><span>情報確認 ${a.checkedAt||a.date}</span></div>
   <p class="lead">${a.excerpt}</p>
   <div class="pointbox"><strong>この記事のポイント</strong><ul>${a.points.map(x=>`<li>${x}</li>`).join('')}</ul></div>
   ${sections}

@@ -28,3 +28,20 @@ document.getElementById('searchButton')?.addEventListener('click',()=>go(documen
 document.getElementById('searchInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')go(e.target.value)});
 document.getElementById('sideSearchButton')?.addEventListener('click',()=>go(document.getElementById('sideSearch').value));
 document.getElementById('sideSearch')?.addEventListener('keydown',e=>{if(e.key==='Enter')go(e.target.value)});
+
+const ranking=document.getElementById('rankingGrid');
+if(ranking){
+  const picks=[
+    A.find(x=>x.id==='boj-125-mortgage'),
+    A.find(x=>x.id==='loan-50'),
+    A.find(x=>x.id==='oi-west-e-2026'),
+    A.find(x=>x.id==='second-opinion'),
+    A.find(x=>x.id==='tokyo23-used-price-rent-aug')
+  ].filter(Boolean);
+  ranking.innerHTML=picks.map((a,i)=>`
+    <a class="ranking-card" href="article.html?id=${a.id}">
+      <span class="rank-no">${i+1}</span>
+      <div><small>${a.category}</small><strong>${a.title}</strong></div>
+      <b>→</b>
+    </a>`).join('');
+}

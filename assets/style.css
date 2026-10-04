@@ -1005,3 +1005,132 @@ footer{
   .trust-strip{grid-template-columns:1fr}
   .trust-strip div{border-right:0;border-bottom:1px solid #e7eef4;padding-bottom:8px}
 }
+
+/* =========================
+   Ver.10 media usability
+   ========================= */
+.page-intro{margin-bottom:18px}
+.page-intro h1{margin:.2em 0}
+.article-filterbar{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px
+}
+.filter-btn{
+  border:1px solid #d8e6f0;
+  background:#fff;
+  color:#315b7e;
+  padding:8px 13px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+}
+.filter-btn.active,.filter-btn:hover{
+  background:#0d6ed8;color:#fff;border-color:#0d6ed8
+}
+.all-articles-list{display:grid;gap:12px}
+.all-article-row{
+  display:grid;
+  grid-template-columns:180px 1fr 30px;
+  gap:18px;
+  align-items:center;
+  padding:14px;
+  background:#fff;
+  border:1px solid #e0ebf2;
+  border-radius:18px;
+}
+.all-article-row img{
+  width:180px;height:115px;object-fit:cover;border-radius:13px;background:#eaf5fb
+}
+.all-article-meta{
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:11px;color:#728496
+}
+.all-article-meta span,.all-article-meta b{
+  padding:3px 7px;border-radius:9px;background:#edf6ff;color:#1b67ad
+}
+.all-article-copy h2{font-size:19px;margin:5px 0}
+.all-article-copy p{font-size:13px;color:#6c7f90;margin:0 0 6px}
+.mini-tags{display:flex;gap:5px;flex-wrap:wrap}
+.mini-tags i{font-style:normal;font-size:10px;background:#f2f6f8;padding:3px 6px;border-radius:8px;color:#71808d}
+.all-arrow{font-size:22px;color:#0d6ed8}
+.category-intro{
+  background:linear-gradient(135deg,#eef8ff,#fff);
+  border:1px solid #dcebf5;
+  border-radius:20px;
+  padding:22px 24px;
+  margin-bottom:20px
+}
+.category-intro h2{font-size:30px;margin:4px 0}
+.category-layout{display:grid;grid-template-columns:1fr 310px;gap:24px}
+.category-list{display:grid;gap:12px}
+.category-row{
+  display:grid;
+  grid-template-columns:155px 1fr 24px;
+  gap:16px;
+  align-items:center;
+  padding:12px;
+  border:1px solid #e0ebf2;
+  border-radius:16px;
+  background:#fff
+}
+.category-row img{width:155px;height:100px;object-fit:cover;border-radius:12px;background:#eaf5fb}
+.category-row h3{font-size:17px;margin:5px 0}
+.category-row p{font-size:12px;color:#708294;margin:0}
+.category-side{display:grid;gap:14px;align-content:start}
+.side-module{
+  border:1px solid #e0ebf2;
+  border-radius:17px;
+  padding:16px;
+  background:#fbfdff
+}
+.side-module h3{margin:0 0 10px}
+.side-module ul{padding-left:20px;margin-bottom:0}
+.text-link{color:#0c69ce;font-weight:800;font-size:12px}
+.article-datebar{
+  display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 16px
+}
+.article-datebar span{
+  font-size:11px;color:#687f92;background:#f1f5f8;padding:5px 8px;border-radius:9px
+}
+.ranking-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px
+}
+.ranking-card{
+  display:grid;
+  grid-template-columns:36px 1fr 18px;
+  gap:8px;
+  align-items:center;
+  border:1px solid #e0ebf2;
+  border-radius:15px;
+  padding:12px;
+  background:#fff;
+  box-shadow:0 6px 16px rgba(28,86,130,.05)
+}
+.rank-no{
+  display:grid;place-items:center;width:32px;height:32px;border-radius:50%;
+  background:#fff1ca;color:#ad7000;font-weight:900
+}
+.ranking-card small{display:block;color:#6d8192;font-size:10px}
+.ranking-card strong{display:block;font-size:13px;line-height:1.35;color:#173b60}
+.ranking-card>b{color:#0d6ed8}
+.source-directory{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px
+}
+.source-directory>a,.source-directory>div{
+  display:block;border:1px solid #e2ebf2;border-radius:14px;padding:14px;background:#fbfdff
+}
+.source-directory strong{display:block;color:#154c7d}
+.source-directory span{font-size:12px;color:#708395}
+@media(max-width:1100px){
+  .ranking-grid{grid-template-columns:repeat(2,1fr)}
+  .category-layout{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .all-article-row{grid-template-columns:90px 1fr 18px}
+  .all-article-row img{width:90px;height:82px}
+  .all-article-copy p{display:none}
+  .all-article-copy h2{font-size:15px}
+  .category-row{grid-template-columns:95px 1fr 18px}
+  .category-row img{width:95px;height:78px}
+  .ranking-grid,.source-directory{grid-template-columns:1fr}
+}
