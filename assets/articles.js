@@ -2,7 +2,7 @@
 window.ARTICLES = [
   {
     id:"market-oct", title:"東京23区の中古マンション市場、いま何を見るべき？価格・在庫・金利を実需目線で整理",
-    category:"東京23区マンション市況", date:"2026.10.04", image:"assets/market.svg",
+    category:"東京23区マンション市況", date:"2026.10.04", image:"assets/market-photo.jpg",
     tags:["東京23区","中古マンション","坪単価","在庫","住宅ローン"],
     excerpt:"平均価格だけでは見えない「エリア差」「在庫」「住宅ローン」の3点から、購入・売却の判断材料を整理します。",
     audience:["購入検討者","売却検討者","住み替え"],
@@ -32,7 +32,7 @@ window.ARTICLES = [
   },
   {
     id:"oi-redev", title:"大井町再開発で住宅市場はどう変わる？購入者が見るべきポイント",
-    category:"再開発", date:"2026.10.02", image:"assets/redevelopment.svg",
+    category:"再開発", date:"2026.10.02", image:"assets/redevelopment-photo.jpg",
     tags:["大井町","品川区","再開発","資産価値"],
     excerpt:"大井町の再開発を、利便性・価格・将来性の観点から実需目線で整理します。",
     audience:["購入検討者","売却検討者","ファミリー"],
@@ -44,7 +44,7 @@ window.ARTICLES = [
   },
   {
     id:"bay-stock", title:"湾岸タワマンは在庫増をどう見る？価格だけで判断しない考え方",
-    category:"湾岸・タワーマンション", date:"2026.10.01", image:"assets/bay.svg",
+    category:"湾岸・タワーマンション", date:"2026.10.01", image:"assets/bay-photo.jpg",
     tags:["湾岸","タワーマンション","勝どき","晴海","豊洲","在庫"],
     excerpt:"在庫増＝価格下落とは限りません。湾岸のタワーマンションをどう評価するか整理します。",
     audience:["購入検討者","売却検討者"],
