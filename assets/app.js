@@ -16,13 +16,13 @@ function card(a){
 }
 const featured = document.getElementById('featuredGrid');
 if(featured){
-  const priorityIds=['reins-latest-aug','boj-125-mortgage','oi-west-e-2026','bay-stock'];
+  const priorityIds=['single-50year-invest','loan-variable-vs-fixed','budget-8000-oimachi-vs-osaki','area-kachidoki-vs-harumi'];
   const featuredItems=priorityIds.map(id=>A.find(x=>x.id===id)).filter(Boolean);
   featured.innerHTML=featuredItems.map(card).join('');
 }
 
 const news = document.getElementById('latestNewsGrid');
-if(news) news.innerHTML = A.slice(4,10).map(a=>`
+if(news) news.innerHTML = A.slice(0,6).map(a=>`
   <a class="news-row" href="article.html?id=${encodeURIComponent(a.id)}">
     <div class="news-date">${a.date}</div>
     <div class="news-cat">${a.category}</div>
