@@ -60,7 +60,7 @@ document.getElementById('categoryPoints').innerHTML=`<ul>${cfg.points.map(x=>`<l
 const list=all.filter(a=>a.category===cat).sort((a,b)=>b.date.localeCompare(a.date));
 document.getElementById('list').innerHTML=list.length?list.map(a=>`
   <a class="category-row" href="article.html?id=${a.id}">
-    <img src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
+    <img loading="lazy" decoding="async" src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
     <div>
       <div class="all-article-meta"><time>${a.date}</time>${a.sourceType?`<b>${a.sourceType}</b>`:''}</div>
       <h3>${a.title}</h3><p>${a.excerpt}</p>

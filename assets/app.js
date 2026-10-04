@@ -2,7 +2,7 @@
 const A = window.ARTICLES || [];
 function card(a){
   return `<a class="article-card" href="article.html?id=${encodeURIComponent(a.id)}">
-    <img src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
+    <img loading="lazy" decoding="async" src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
     <div class="pad">
       <div class="card-meta-line">
         <span class="pill">${a.category}</span>
@@ -30,7 +30,7 @@ if(news) news.innerHTML = A.slice(4,10).map(a=>`
     <div class="news-arrow">→</div>
   </a>`).join('');
 
-function go(q){ location.href = q.trim() ? 'search.html?q='+encodeURIComponent(q.trim()) : 'search.html'; }
+function go(q){ const term=q.trim(); if(term&&window.trackSearch) window.trackSearch(term); location.href = term ? 'search.html?q='+encodeURIComponent(term) : 'search.html'; }
 document.getElementById('searchButton')?.addEventListener('click',()=>go(document.getElementById('searchInput').value));
 document.getElementById('searchInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')go(e.target.value)});
 document.getElementById('sideSearchButton')?.addEventListener('click',()=>go(document.getElementById('sideSearch').value));

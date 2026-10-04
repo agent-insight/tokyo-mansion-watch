@@ -7,7 +7,7 @@ function render(){
   const rows=all.filter(a=>current==='all'||a.category===current);
   box.innerHTML=rows.map(a=>`
     <a class="all-article-row" href="article.html?id=${encodeURIComponent(a.id)}">
-      <img src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
+      <img loading="lazy" decoding="async" src="${a.image||'assets/thumb-market.jpg'}" alt="${a.category||'記事画像'}" onerror="this.src='assets/thumb-market.jpg'">
       <div class="all-article-copy">
         <div class="all-article-meta">
           <span>${a.category}</span>
