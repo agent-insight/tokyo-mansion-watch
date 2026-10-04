@@ -2968,3 +2968,15 @@ main{
 @media(max-width:720px){
   .human-source{margin-top:24px!important}
 }
+
+/* Ver.28 comparison article cluster */
+.comparison-feature{margin-top:34px;margin-bottom:34px}
+.comparison-feature .section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:18px}
+.comparison-feature .section-heading p{margin:4px 0 0;color:#718592;font-size:12px}
+.comparison-feature .section-heading>a{font-size:11px;font-weight:900;color:#1769ad}
+.comparison-feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.comparison-feature-grid a{display:block;padding:16px;border:1px solid #dce8ef;border-radius:16px;background:#fff}
+.comparison-feature-grid strong,.comparison-feature-grid span{display:block}
+.comparison-feature-grid strong{font-size:15px;color:#285573}.comparison-feature-grid span{margin-top:5px;font-size:11px;color:#718492}
+@media(max-width:900px){.comparison-feature-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.comparison-feature .section-heading{display:block}.comparison-feature .section-heading>a{display:inline-block;margin-top:8px}.comparison-feature-grid{grid-template-columns:1fr}}
