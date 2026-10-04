@@ -11,22 +11,62 @@ function estimateReadingMinutes(article){
 }
 function escapeHtml(s){ return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
+
+function naturalizeText(text){
+  let s=String(text||'');
+  // 固い「です。」の連続を避け、雑誌・コラムに近いリズムへ。
+  s=s.replace(/ことが重要です。/g,'ことが重要。');
+  s=s.replace(/のが基本です。/g,'のが基本。');
+  s=s.replace(/が強みです。/g,'が強み。');
+  s=s.replace(/がポイントです。/g,'がポイント。');
+  s=s.replace(/という選択肢です。/g,'という選択肢。');
+  s=s.replace(/という状況です。/g,'という状況。');
+  s=s.replace(/という数字です。/g,'という数字。');
+  s=s.replace(/([0-9０-９A-Za-z一-龠ぁ-んァ-ヶ％%㎡円万億・（）()／〜～\-]+)です。$/,'$1。');
+  s=s.replace(/整理します。$/,'整理してみます。');
+  s=s.replace(/解説します。$/,'見ていきます。');
+  return s;
+}
+
+function voiceIntro(article){
+  const tags=article.tags||[];
+  if(tags.includes('大井町')){
+    return '大井町は、私自身が住み替え先として選んだ街です。数字だけでは分からない使いやすさもありますし、逆に「ここは物件ごとの差が大きい」と感じるところもあります。今回は仲介の現場で見る順番に沿って整理します。';
+  }
+  if(article.category==='住宅ローン'){
+    return '住宅ローンの相談では、「結局どれを選べばいいですか？」とよく聞かれます。金利だけなら比較は簡単ですが、実際は年齢、借入期間、手元資金、将来の売却まで入れると答えが変わります。ここでは普段の面談で私が確認している順番で見ていきます。';
+  }
+  if(article.category==='東京23区市況'){
+    return '市況の数字は毎月見ていますが、平均価格だけで「上がった・下がった」と判断すると少し危険です。成約件数、在庫、実際の成約単価を一緒に見た方が、現場の感覚に近くなります。';
+  }
+  if(tags.some(t=>['湾岸','勝どき','晴海','豊洲','月島','タワーマンション'].includes(t))){
+    return '湾岸の物件は、同じマンションでも階数・方角・眺望で価格差が大きく出ます。案内のときも「エリア平均」より、まず棟内の競合住戸を見ます。今回もその目線で整理します。';
+  }
+  if(article.category==='売却・住み替え'){
+    return '売却相談で一番よくお伝えするのは、「高く出すこと」と「高く売れること」は別、という点です。査定額だけではなく、反響や競合、次の住まいまで含めて考えます。';
+  }
+  return '不動産は、数字だけを並べても判断しづらいことが多いです。この記事では、私がお客様に説明するときと同じように「結局どこを見るのか」を中心にまとめます。';
+}
+
 let h2Index=0;
 const sections=(a.body||[]).map(([t,v])=>{
-  if(t==='h2'){ h2Index++; return `<h2 id="toc-${h2Index}">${v}</h2>`; }
-  if(t==='view') return `<div class="author-view"><div class="view-label">YAMAGUCHI VIEW</div><strong>山口の見解</strong><p>${v}</p></div>`;
-  return `<p>${v}</p>`;
+  if(t==='h2'){
+    h2Index++;
+    const heading=v==='山口の見解'?'現場ではこう見ています':v;
+    return `<h2 id="toc-${h2Index}">${heading}</h2>`;
+  }
+  if(t==='view') return `<div class="author-view human-view"><strong>山口メモ</strong><p>${naturalizeText(v)}</p></div>`;
+  return `<p>${naturalizeText(v)}</p>`;
 }).join('');
 
 const sourceBadge=a.sourceType||(a.sourceUrl?"外部情報":"実務解説");
 const source=a.sourceUrl
-  ? `<div class="source-box">
-       <div class="source-head"><span class="trust-badge">${sourceBadge}</span><span class="checked">確認日 ${a.checkedAt||a.date}</span></div>
-       <strong>情報源</strong>
-       <a href="${a.sourceUrl}" target="_blank" rel="noopener noreferrer">公式・一次情報を確認：${a.sourceName} ↗</a>
-       <span>事実関係は上記情報源を確認し、住宅購入・売却への影響は山口が独自に整理しています。</span>
+  ? `<div class="source-box human-source">
+       <strong>参考資料</strong>
+       <a href="${a.sourceUrl}" target="_blank" rel="noopener noreferrer">${a.sourceName} ↗</a>
+       <span>確認：${a.checkedAt||a.date}</span>
      </div>`
-  : `<div class="source-box"><div class="source-head"><span class="trust-badge">${sourceBadge}</span></div><strong>解説</strong><span>${a.sourceName}</span></div>`;
+  : '';
 
 const related=all.filter(x=>x.id!==a.id).map(x=>{
   let score=(x.category===a.category?3:0);
@@ -71,7 +111,7 @@ const topicInternalHtml=topicInternalLinks.length ? `<div class="in-article-link
 
 const summaryHtml = summary3.length ? `
   <section class="summary3">
-    <div class="summary3-title"><span>3</span> この記事を3行で</div>
+    <div class="summary3-title">先に要点だけ</div>
     <ol>${summary3.map(x=>`<li>${x}</li>`).join('')}</ol>
   </section>` : '';
 
@@ -83,7 +123,7 @@ const tocHtml=tocItems.length>=3 ? `
 
 const metricsHtml = metrics.length ? `
   <section class="number-section">
-    <h2>重要な数字</h2>
+    <h2>まず押さえたい数字</h2>
     <div class="number-grid">
       ${metrics.map(m=>`<div class="number-card"><small>${escapeHtml(m.label)}</small><strong>${escapeHtml(m.value)}</strong><span>${escapeHtml(m.note||'')}</span></div>`).join('')}
     </div>
@@ -91,47 +131,43 @@ const metricsHtml = metrics.length ? `
 
 const comparisonHtml = comparison.length>1 ? `
   <section class="comparison-section">
-    <h2>比較して見る</h2>
+    <h2>並べるとこうなります</h2>
     <div class="table-wrap"><table class="comparison-table">
       <thead><tr>${comparison[0].map(c=>`<th>${escapeHtml(c)}</th>`).join('')}</tr></thead>
       <tbody>${comparison.slice(1).map(row=>`<tr>${row.map((c,i)=>i===0?`<th>${escapeHtml(c)}</th>`:`<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody>
     </table></div>
   </section>` : '';
 
-const updatesHtml = `
-  <section class="update-section">
-    <h2>更新履歴</h2>
+const updatesHtml = updateLog.length>1 ? `
+  <details class="update-section compact-update">
+    <summary>この記事の更新履歴</summary>
     <div class="update-list">${updateLog.map(([d,t])=>`<div><time>${escapeHtml(d)}</time><span>${escapeHtml(t)}</span></div>`).join('')}</div>
-  </section>`;
+  </details>` : '';
 
 const tagsHtml = `
-  <section class="article-tags">
-    <h2>関連キーワード</h2>
+  <div class="article-tags compact-tags">
     <div class="chips">${(a.tags||[]).map(t=>`<a href="search.html?q=${encodeURIComponent(t)}">${escapeHtml(t)}</a>`).join('')}</div>
-  </section>`;
+  </div>`;
 
 document.getElementById('articleBody').innerHTML=`
   <div class="breadcrumb"><a href="index.html">トップ</a><span>›</span><a href="category.html?cat=${encodeURIComponent(a.category)}">${a.category}</a></div>
   <div class="meta"><span>${a.category}</span><time>${a.date}</time></div>
   <h1>${a.title}</h1>
   <img class="article-hero-image" fetchpriority="high" decoding="async" src="${a.image||'assets/thumb-market.jpg'}" alt="${a.title}" onerror="this.src='assets/thumb-market.jpg'">
-  <div class="article-datebar"><span>公開 ${a.date}</span><span>情報確認 ${a.checkedAt||a.date}</span><span>読了目安 約${readingMinutes}分</span></div>
-  <div class="article-trust-line"><span>✓ 出典確認</span><span>✓ 事実と見解を分離</span><a href="policy.html">編集方針を見る →</a></div>
-  <p class="lead">${a.excerpt}</p>
+  <div class="article-datebar"><span>${a.date}</span><span>約${readingMinutes}分</span></div>
+  <p class="lead">${naturalizeText(a.excerpt)}</p>
+  <div class="author-intro-note"><span>山口より</span><p>${voiceIntro(a)}</p></div>
   ${clusterContext}
-  ${usefulToolsHtml}
   ${summaryHtml}
+  ${usefulToolsHtml}
   ${tocHtml}
-  <div class="pointbox"><strong>この記事のポイント</strong><ul>${(a.points||[]).map(x=>`<li>${x}</li>`).join('')}</ul></div>
   ${metricsHtml}
   ${sections}
   ${topicInternalHtml}
   ${comparisonHtml}
   ${source}
-  <h2>この記事が関係する人</h2>
-  <div class="audience">${(a.audience||[]).map(x=>`<span>${x}</span>`).join('')}</div>
   <section class="share-section">
-    <h2>この記事を共有する</h2>
+    <h2>共有する</h2>
     <div class="share-buttons">
       <a href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(canonical)}" target="_blank" rel="noopener noreferrer">LINE</a>
       <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(a.title)}&url=${encodeURIComponent(canonical)}" target="_blank" rel="noopener noreferrer">X</a>
