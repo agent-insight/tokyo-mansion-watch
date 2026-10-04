@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agent-insight.github.io/tokyo-mansion-watch/sitemap.xml
