@@ -35,7 +35,7 @@ function freshnessNotice(a){
   if(!window.TMW_GOV) return '';
   const f=window.TMW_GOV.freshnessFor(a);
   if(f.type==='stale' || f.type==='review'){
-    return `<div class="freshness-notice ${f.type}"><strong>${f.label}</strong><span>市況・金利・制度は変わるため、最新情報は「3分ウォッチ」「制度ウォッチ」もあわせて確認してください。</span><a href="${a.category==='住宅ローン'?'rules.html':'brief.html'}">最新情報を見る →</a></div>`;
+    return `<div class="freshness-notice ${f.type}"><strong>${f.label}</strong><span>最新の市況・金利・制度は更新情報もあわせてご確認ください。</span><a href="${a.category==='住宅ローン'?'rules.html':'brief.html'}">最新情報を見る →</a></div>`;
   }
   return '';
 }
@@ -182,7 +182,7 @@ document.getElementById('articleBody').innerHTML=`
   <div class="meta"><span>${a.category}</span><time>${a.date}</time></div>
   <h1>${a.title}</h1>
   <img class="article-hero-image" fetchpriority="high" decoding="async" src="${a.image||'assets/thumb-market.jpg'}" alt="${a.title}" onerror="this.src='assets/thumb-market.jpg'">
-  <div class="article-datebar"><span>${a.date}</span><span>${articleContentType(a)}</span><span>約${readingMinutes}分</span>${freshnessBadge(a)}</div>
+  <div class="article-datebar"><span>${a.date}</span><span>約${readingMinutes}分</span>${freshnessBadge(a)}</div>
   ${freshnessNotice(a)}
   <p class="lead">${naturalizeText(a.excerpt)}</p>
   <div class="author-intro-note"><span>山口より</span><p>${a.openingNote || voiceIntro(a)}</p></div>
