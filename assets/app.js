@@ -22,13 +22,20 @@ if(featured){
 }
 
 const news = document.getElementById('latestNewsGrid');
-if(news) news.innerHTML = A.slice(0,6).map(a=>`
+if(news){
+  const latestItems=[...A].sort((a,b)=>{
+    const da=String(a.date||'').replaceAll('.','-');
+    const db=String(b.date||'').replaceAll('.','-');
+    return db.localeCompare(da);
+  }).slice(0,6);
+  news.innerHTML = latestItems.map(a=>`
   <a class="news-row" href="article.html?id=${encodeURIComponent(a.id)}">
     <div class="news-date">${a.date}</div>
     <div class="news-cat">${a.category}</div>
     <div class="news-title">${a.title}</div>
     <div class="news-arrow">→</div>
   </a>`).join('');
+}
 
 function go(q){ const term=q.trim(); if(term&&window.trackSearch) window.trackSearch(term); location.href = term ? 'search.html?q='+encodeURIComponent(term) : 'search.html'; }
 document.getElementById('searchButton')?.addEventListener('click',()=>go(document.getElementById('searchInput').value));
