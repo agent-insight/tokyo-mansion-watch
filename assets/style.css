@@ -3668,3 +3668,12 @@ main{
 .v45-area-article-card span{font-size:12px;line-height:1.65;color:#71838e}
 @media(max-width:900px){.v45-main-area-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:650px){.v45-main-area-grid,.v45-subarea-grid,.v45-area-article-grid{grid-template-columns:1fr!important}}
+
+/* Ver.48: new area hubs use the same AREA GUIDE UI as Meguro */
+.area-hub .v45-area-articles{margin-top:32px}
+.area-hub .v45-area-articles .section-heading{margin-bottom:12px}
+.area-hub .v45-area-article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.area-hub .area-sub-badge{margin-left:8px;vertical-align:middle}
+@media(max-width:650px){
+  .area-hub .v45-area-article-grid{grid-template-columns:1fr}
+}
