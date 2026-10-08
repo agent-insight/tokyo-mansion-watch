@@ -1,7 +1,8 @@
 (() => {
   const briefs=window.TMW_BRIEFS||[];
   if(!briefs.length) return;
-  const latest=briefs[0];
+  const requested=new URLSearchParams(location.search).get('date');
+  const latest=(requested && briefs.find(b=>b.id===requested)) || briefs[0];
 
   const $=id=>document.getElementById(id);
   if($('briefUpdated')) $('briefUpdated').textContent='最終更新：'+latest.label;

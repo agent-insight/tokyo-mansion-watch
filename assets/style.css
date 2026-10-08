@@ -3624,3 +3624,5 @@ main{
 .share-btn.x-share{background:#17202a;border-color:#17202a;color:#fff}
 .share-btn.is-done{background:#edf8f1;border-color:#cde6d6;color:#397252}
 @media(max-width:650px){.tool-share-card,.market-share-card{display:block}.tool-share-actions{margin-top:11px;justify-content:stretch}.share-btn{flex:1 1 0;min-width:0;font-size:11px}}
+
+.rule-income-clarify{margin-top:12px;padding:13px 14px;border-radius:13px;background:#eef7ff;border:1px solid #cfe2ef}.rule-income-clarify strong{font-size:11px;color:#315f7d}.rule-income-clarify p{margin:5px 0 0;font-size:11.5px;line-height:1.75;color:#647b8a}.rule-income-clarify b{color:#284f69}
