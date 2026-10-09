@@ -84,17 +84,26 @@ const sections=(a.body||[]).map(([t,v])=>{
     return `<h2 id="toc-${h2Index}">${heading}</h2>`;
   }
   if(t==='view') return `<div class="author-view human-view"><strong>${a.viewLabel || '私ならこう見ます'}</strong><p>${naturalizeText(v)}</p></div>`;
+  if(t==='table' && v && Array.isArray(v.headers) && Array.isArray(v.rows)){
+    return `<div class="table-wrap article-inline-table"><table class="comparison-table"><thead><tr>${v.headers.map(c=>`<th>${escapeHtml(c)}</th>`).join('')}</tr></thead><tbody>${v.rows.map(row=>`<tr>${row.map((c,i)=>i===0?`<th>${escapeHtml(c)}</th>`:`<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  }
   return `<p>${naturalizeText(v)}</p>`;
 }).join('');
 
 const sourceBadge=a.sourceType||(a.sourceUrl?"外部情報":"実務解説");
-const source=a.sourceUrl
+const source=(Array.isArray(a.sources) && a.sources.length)
   ? `<details class="source-box human-source">
        <summary>参考資料</summary>
-       <a href="${a.sourceUrl}" target="_blank" rel="noopener noreferrer">${a.sourceName} ↗</a>
+       <div class="source-list">${a.sources.map(s=>`<div class="source-list-item"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.name)} ↗</a>${s.note?`<span>${escapeHtml(s.note)}</span>`:''}</div>`).join('')}</div>
        <span>確認：${a.checkedAt||a.date}</span>
      </details>`
-  : '';
+  : (a.sourceUrl
+      ? `<details class="source-box human-source">
+           <summary>参考資料</summary>
+           <a href="${a.sourceUrl}" target="_blank" rel="noopener noreferrer">${a.sourceName} ↗</a>
+           <span>確認：${a.checkedAt||a.date}</span>
+         </details>`
+      : '');
 
 const related=all.filter(x=>x.id!==a.id).map(x=>{
   let score=(x.category===a.category?3:0);
