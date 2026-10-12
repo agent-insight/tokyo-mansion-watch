@@ -20,7 +20,10 @@
         <h3>${i.title}</h3>
         <p>${i.text}</p>
         <div class="brief-yamaguchi"><b>エージェント山口の見解</b><span>${i.yamaguchi}</span></div>
-        <a href="${i.href}" data-smart-link data-topic="${i.topic}">${i.linkText}</a>
+        <div class="brief-links">
+          <a href="${i.href}" data-smart-link data-topic="${i.topic}">${i.linkText}</a>
+          ${i.sourceUrl?`<a class="brief-source-link" href="${i.sourceUrl}" target="_blank" rel="noopener noreferrer">${i.sourceName||'公式情報を見る'} ↗</a>`:''}
+        </div>
       </article>`).join('');
   }
 
