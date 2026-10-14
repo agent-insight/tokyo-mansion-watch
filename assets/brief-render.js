@@ -18,12 +18,13 @@
         <div class="brief-index">${i.rank}</div>
         <div class="brief-tag">${i.type}</div>
         <h3>${i.title}</h3>
-        <p>${i.text}</p>
+        ${i.change?`<p><b>何が変わったか</b><br>${i.change}</p><p><b>購入・売却への影響</b><br>${i.impact}</p>`:`<p>${i.text}</p>`}
         <div class="brief-yamaguchi"><b>エージェント山口の見解</b><span>${i.yamaguchi}</span></div>
         <div class="brief-links">
           <a href="${i.href}" data-smart-link data-topic="${i.topic}">${i.linkText}</a>
-          ${i.sourceUrl?`<a class="brief-source-link" href="${i.sourceUrl}" target="_blank" rel="noopener noreferrer">${i.sourceName||'公式情報を見る'} ↗</a>`:''}
+          ${i.sourceUrl?`<a class="brief-source-link" href="${i.sourceUrl}" target="_blank" rel="noopener noreferrer">${i.sourceName||'公式情報を見る'} ↗</a>`:''}${i.additionalSourceUrl?`<a class="brief-source-link" href="${i.additionalSourceUrl}" target="_blank" rel="noopener noreferrer">${i.additionalSourceName||'参考情報'} ↗</a>`:''}
         </div>
+        ${i.sourceDate?`<small class="brief-source-date">出典公表日：${i.sourceDate}／確認日：${latest.verifiedAt||latest.date}</small>`:''}
       </article>`).join('');
   }
 
