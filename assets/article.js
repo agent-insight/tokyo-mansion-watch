@@ -105,7 +105,8 @@ const source=(Array.isArray(a.sources) && a.sources.length)
          </details>`
       : '');
 
-const related=all.filter(x=>x.id!==a.id).map(x=>{
+const relatedCandidates = Array.isArray(a.relatedIds) && a.relatedIds.length ? a.relatedIds.map(id=>all.find(x=>x.id===id)).filter(Boolean) : null;
+const related=relatedCandidates || all.filter(x=>x.id!==a.id).map(x=>{
   let score=(x.category===a.category?3:0);
   score+=(x.tags||[]).filter(t=>(a.tags||[]).includes(t)).length;
   return {x,score};
