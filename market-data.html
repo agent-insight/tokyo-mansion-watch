@@ -4,7 +4,7 @@
 <title>東京23区 中古マンション市況データ｜数字の見方まで解説｜東京マンションウォッチ</title>
 <meta name="description" content="REINS等の公表資料をもとに、東京23区・首都圏中古マンションの成約件数、成約㎡単価、在庫、金利環境を定点観測。購入・売却でどう読むかまで解説します。">
 <link rel="canonical" href="https://agent-insight.github.io/tokyo-mansion-watch/market-data.html">
-<link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/style.css?v=51">
+<link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/style.css?v=55">
 <meta property="og:type" content="website"><meta property="og:title" content="東京23区 中古マンション市況データ｜東京マンションウォッチ"><meta property="og:description" content="REINS公表資料をもとに東京23区・首都圏の中古マンション市場を定点観測。"><meta property="og:url" content="https://agent-insight.github.io/tokyo-mansion-watch/market-data.html">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"東京23区・首都圏 中古マンション市況 定点観測","description":"REINS等の公開統計をもとに主要指標を整理した市況ページ","creator":{"@type":"Person","name":"山口 功記"},"isBasedOn":"https://www.reins.or.jp/library/","url":"https://agent-insight.github.io/tokyo-mansion-watch/market-data.html"}</script>
 </head>
@@ -18,15 +18,15 @@
   <span class="eyebrow">MONTHLY DATA</span>
   <h1>東京23区・中古マンション市況データ</h1>
   <p>ニュースの見出しだけではなく、<strong>成約件数・実際の成約単価・在庫・金利環境</strong>をまとめて確認するページです。数字を「買主・売主がどう使うか」まで整理します。</p>
-  <div class="data-updated">最終確認：2026年10月4日 ／ 最新公表：REINS 2026年8月度 ／ <b>公式サイト確認済</b></div>
+  <div class="data-updated">最終確認：2026年10月16日 ／ 最新公表：REINS 2026年9月度 ／ <b>公式サイト確認済</b></div>
 </section>
 
 <section class="market-snapshot">
   <div class="snapshot-title"><span>今月を30秒で</span><strong>「成約件数↓・価格ほぼ横ばい・在庫↑」</strong></div>
   <div class="snapshot-meter">
-    <div><small>取引の勢い</small><strong>弱め</strong><span>23区成約件数 −20.6%</span></div>
-    <div><small>価格</small><strong>ほぼ横ばい</strong><span>23区㎡単価 −0.3%</span></div>
-    <div><small>選択肢</small><strong>増加</strong><span>首都圏在庫 +8.2%</span></div>
+    <div><small>取引の勢い</small><strong>弱め</strong><span>23区成約件数 −30.6%</span></div>
+    <div><small>価格</small><strong>ほぼ横ばい</strong><span>23区㎡単価 −0.9%</span></div>
+    <div><small>選択肢</small><strong>増加</strong><span>首都圏在庫 +15.1%</span></div>
   </div>
   <p>※単月データのため、これだけで「相場が下落した」「買い時」と断定するものではありません。</p>
 </section>
@@ -34,9 +34,9 @@
 <section class="data-scope">
   <div class="section-heading"><div><h2>まず見る4つの数字</h2><small>数字をタップすると「どう読むか」を確認できます</small></div></div>
   <div class="data-cards data-cards-v23">
-    <button type="button" class="active" data-market-card="deals"><span>東京23区・成約件数</span><strong>1,265件</strong><em class="down">前年同月比 −20.6%</em><small>2026年8月</small></button>
-    <button type="button" data-market-card="price"><span>東京23区・成約㎡単価</span><strong>132.69万円/㎡</strong><em class="down">前年同月比 −0.3%</em><small>2026年8月</small></button>
-    <button type="button" data-market-card="stock"><span>首都圏・在庫件数</span><strong>48,235件</strong><em class="up">前年同月比 +8.2%</em><small>2026年8月</small></button>
+    <button type="button" class="active" data-market-card="deals"><span>東京23区・成約件数</span><strong>1,385件</strong><em class="down">前年同月比 −30.6%</em><small>2026年9月</small></button>
+    <button type="button" data-market-card="price"><span>東京23区・成約㎡単価</span><strong>130.39万円/㎡</strong><em class="down">前年同月比 −0.9%</em><small>2026年9月</small></button>
+    <button type="button" data-market-card="stock"><span>首都圏・在庫件数</span><strong>50,450件</strong><em class="up">前年同月比 +15.1%</em><small>2026年9月</small></button>
     <button type="button" data-market-card="rate"><span>日銀・政策金利</span><strong>1.25%程度</strong><em>2026年9月24日以降</em><small>住宅ローンと同一ではありません</small></button>
   </div>
   <div id="marketCardExplain" class="market-card-explain" aria-live="polite">
@@ -50,7 +50,7 @@
   <div class="conversion-panel">
     <label>専有面積 <span><input id="marketArea" type="number" min="20" max="200" step="1" value="70" inputmode="numeric"> ㎡</span></label>
     <div class="conversion-results">
-      <div><small>132.69万円/㎡を坪単価換算</small><strong id="tsuboPrice">—</strong></div>
+      <div><small>130.39万円/㎡を坪単価換算</small><strong id="tsuboPrice">—</strong></div>
       <div><small id="areaPriceLabel">70㎡換算</small><strong id="areaPrice">—</strong></div>
     </div>
     <p>※東京都区部の月次平均から単純換算した参考値です。個別マンションの査定価格ではありません。</p>
@@ -70,7 +70,7 @@
   <div class="author-view">
     <div class="view-label">YAMAGUCHI VIEW</div>
     <strong>「価格が少し下がった＝全面的に買いやすくなった」とはまだ言えません。</strong>
-    <p>東京23区は8月の成約件数が大きく減り、成約㎡単価も前年同月をわずかに下回りました。一方で、物件ごとの差は大きく、駅近・管理状態・間取り・希少性によって動きは異なります。平均値は市場の温度を見るために使い、実際の購入判断では候補住戸そのものの価格妥当性を別に確認するのが大切です。</p>
+    <p>東京23区は9月の成約件数が前年同月比30.6％減となり、成約㎡単価も前年同月を0.9％下回りました。一方で、物件ごとの差は大きく、駅近・管理状態・間取り・希少性によって動きは異なります。平均値は市場の温度を見るために使い、実際の購入判断では候補住戸そのものの価格妥当性を別に確認するのが大切です。</p>
   </div>
 </section>
 
@@ -79,11 +79,11 @@
   <div class="table-wrap"><table class="comparison-table market-table">
     <thead><tr><th>指標</th><th>最新値</th><th>前年同月比</th><th>対象範囲</th><th>読み方</th></tr></thead>
     <tbody>
-      <tr><th>中古マンション成約件数</th><td>1,265件</td><td>−20.6%</td><td>東京都区部</td><td>取引の勢い</td></tr>
-      <tr><th>中古マンション成約㎡単価</th><td>132.69万円/㎡</td><td>−0.3%</td><td>東京都区部</td><td>価格水準</td></tr>
-      <tr><th>中古マンション成約件数</th><td>3,180件</td><td>−10.5%</td><td>首都圏</td><td>広域の取引量</td></tr>
-      <tr><th>中古マンション成約価格</th><td>5,129万円</td><td>−2.8%</td><td>首都圏</td><td>物件構成差に注意</td></tr>
-      <tr><th>中古マンション在庫件数</th><td>48,235件</td><td>+8.2%</td><td>首都圏</td><td>選択肢・競合</td></tr>
+      <tr><th>中古マンション成約件数</th><td>1,385件</td><td>−30.6%</td><td>東京都区部</td><td>取引の勢い</td></tr>
+      <tr><th>中古マンション成約㎡単価</th><td>130.39万円/㎡</td><td>−0.9%</td><td>東京都区部</td><td>価格水準</td></tr>
+      <tr><th>中古マンション成約件数</th><td>3,457件</td><td>−22.7%</td><td>首都圏</td><td>広域の取引量</td></tr>
+      <tr><th>中古マンション成約価格</th><td>5,111万円</td><td>−4.5%</td><td>首都圏</td><td>物件構成差に注意</td></tr>
+      <tr><th>中古マンション在庫件数</th><td>50,450件</td><td>+15.1%</td><td>首都圏</td><td>選択肢・競合</td></tr>
     </tbody>
   </table></div>
   <p class="data-caution">※「東京23区」と「首都圏」は集計範囲が異なります。異なる範囲の数字を直接比較して相場判断しないよう注意してください。</p>
@@ -108,6 +108,7 @@
 
 <section class="market-update-log">
   <div class="section-heading"><div><h2>更新履歴</h2><small>過去データを残して「変化」を追えるページに育てます</small></div></div>
+  <div class="update-row"><time>2026.10.16</time><div><strong>REINS 2026年9月度を反映</strong><p>東京都区部の成約件数・成約㎡単価、首都圏の成約・在庫データを更新。</p></div></div>
   <div class="update-row"><time>2026.10.04</time><div><strong>REINS 2026年8月度を反映</strong><p>東京都区部の成約件数・成約㎡単価、首都圏の成約・在庫データを更新。</p></div></div>
 </section>
 
@@ -118,7 +119,7 @@
 </section>
 
 <section class="tool-links tool-links-prominent">
-  <a href="article.html?id=reins-latest-aug"><strong>REINS 8月度を詳しく</strong><span>市況記事を読む →</span></a>
+  <a href="article.html?id=tokyo23-reins-sep-2026"><strong>REINS 9月度を詳しく</strong><span>市況記事を読む →</span></a>
   <a href="category.html?cat=東京23区市況"><strong>東京23区市況</strong><span>市況記事一覧 →</span></a>
   <a href="tools/mortgage-calculator/"><strong>住宅ローン計算</strong><span>35・40・50年を比較 →</span></a>
 </section>
@@ -137,8 +138,8 @@
 </main>
 
 <footer><div class="container"><strong>東京マンションウォッチ</strong><p>TERASS 不動産エージェント 山口功記</p></div></footer>
-<script src="assets/market-data.js?v=51"></script>
-<script src="assets/analytics.js?v=51"></script>
-<script src="assets/share-tools.js?v=51"></script>
-<script src="assets/site-meta.js?v=51"></script>
+<script src="assets/market-data.js?v=55"></script>
+<script src="assets/analytics.js?v=55"></script>
+<script src="assets/share-tools.js?v=55"></script>
+<script src="assets/site-meta.js?v=55"></script>
 </body></html>
