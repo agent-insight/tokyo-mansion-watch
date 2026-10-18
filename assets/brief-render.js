@@ -1,5 +1,5 @@
 (() => {
-  const briefs=window.TMW_BRIEFS||[];
+  const briefs=window.TMW_WEEKLY_WATCH||window.TMW_BRIEFS||[];
   if(!briefs.length) return;
   const requested=new URLSearchParams(location.search).get('date');
   const latest=(requested && briefs.find(b=>b.id===requested)) || briefs[0];
