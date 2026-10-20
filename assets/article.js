@@ -1,7 +1,14 @@
 
 const params=new URLSearchParams(location.search), id=params.get('id');
 const all=(window.ARTICLES||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
-const a=all.find(x=>x.id===id)||all[0];
+const matched=id ? all.find(x=>x.id===id) : null;
+if(id && !matched){
+  document.title='記事を確認中｜東京マンションウォッチ';
+  const target=document.getElementById('articleBody');
+  if(target) target.innerHTML='<div class="empty"><h1>記事を確認中です</h1><p>指定された記事データがまだブラウザに反映されていない可能性があります。少し時間をおいて再読み込みしてください。</p><p><a href="index.html">トップへ戻る →</a></p></div>';
+  throw new Error('Article ID not found: '+id);
+}
+const a=matched||all[0];
 document.title=a.title+'｜東京マンションウォッチ';
 const canonical='https://agent-insight.github.io/tokyo-mansion-watch/article.html?id='+encodeURIComponent(a.id);
 
