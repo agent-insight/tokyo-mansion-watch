@@ -1,5 +1,63 @@
 window.TMW_WEEKLY_WATCH = [
 {
+  "id": "2026-10-25",
+  "date": "2026-10-25",
+  "label": "2026年10月25日",
+  "readTime": "約3分",
+  "headline": "住宅ローン需要に改善の動き。飯田橋再開発と品川区の浸水対策",
+  "intro": "住宅ローン需要の最新調査、飯田橋駅周辺の再開発、品川区の浸水対策支援。購入・売却の判断にどう関係するかを整理します。",
+  "verified": true,
+  "verifiedAt": "2026-10-25",
+  "items": [
+    {
+      "rank": "01",
+      "type": "住宅ローン・金融市場",
+      "title": "住宅ローン需要判断DIが1から4へ改善",
+      "change": "10月22日公表の日銀・主要銀行貸出動向アンケートで、住宅ローン資金需要判断DIは前回の1から4に上昇しました。銀行から見た需要の小幅な改善です。",
+      "impact": "これは銀行の需要判断で、融資承認率や成約件数ではありません。借入期間や諸費用の取扱いも銀行ごとに比較する必要があります。",
+      "yamaguchi": "50年ローンや諸費用込みの借入れでは、同じ年収でも銀行によって条件が変わります。購入前に複数行を比較したいですね。",
+      "href": "article.html?id=loan-rate-stress",
+      "linkText": "金利上昇への備えを見る →",
+      "topic": "loan",
+      "sourceName": "日本銀行｜主要銀行貸出動向アンケート",
+      "sourceUrl": "https://www.boj.or.jp/statistics/dl/loan/loos/release/loos2610.pdf",
+      "sourceDate": "2026-10-22"
+    },
+    {
+      "rank": "02",
+      "type": "再開発・東京23区",
+      "title": "飯田橋駅前・下宮比町地区で環境影響評価手続き",
+      "change": "東京都は10月19日、下宮比町地区第一種市街地再開発事業の環境影響評価書案を公表しました。縦覧は11月17日まで、意見書は12月2日まで受け付ける予定です。",
+      "impact": "将来の歩行者動線や街並みが変わる可能性がありますが、現時点で事業の完成が決定したわけではありません。工事中の影響も確認が必要です。",
+      "yamaguchi": "再開発の期待がすでに価格に織り込まれていないか、駅距離・眺望・周辺成約事例を比較して判断します。",
+      "href": "area-tokyo23.html",
+      "linkText": "東京23区の情報を見る →",
+      "topic": "market",
+      "sourceName": "東京都環境局｜下宮比町地区環境影響評価書案",
+      "sourceUrl": "https://www.kankyo.metro.tokyo.lg.jp/assessment/reading_guide/oshirase/401_shimomiyabi_an",
+      "sourceDate": "2026-10-19",
+      "additionalSourceName": "新宿区｜下宮比町地区の都市計画",
+      "additionalSourceUrl": "https://www.city.shinjuku.lg.jp/kusei/seibi01_000001_00045.html"
+    },
+    {
+      "rank": "03",
+      "type": "住宅制度・防災",
+      "title": "品川区、止水板設置助成の予算追加を計画",
+      "change": "品川区は10月23日、第3号補正予算に止水板設置助成の追加経費を計上しました。既存制度の個人向け助成は設置費用の5分の4、上限100万円が基本です。補正予算の計上は成立・交付決定を意味しません。",
+      "impact": "マンションの地下駐車場や電気設備への浸水対策は購入時の確認事項です。集合住宅の助成条件は区への個別確認が必要です。",
+      "yamaguchi": "ハザードマップだけでなく、地下設備や管理組合の防災対策も確認したいところです。助成利用は工事契約前に区へ相談しましょう。",
+      "href": "area-shinagawa.html",
+      "linkText": "品川区のマンション情報を見る →",
+      "topic": "buy",
+      "sourceName": "品川区｜令和8年度第3号補正予算",
+      "sourceUrl": "https://www.city.shinagawa.tokyo.jp/kusei/zaisei/1005664/1008962/1011173.html",
+      "sourceDate": "2026-10-23",
+      "additionalSourceName": "品川区｜止水板設置等助成",
+      "additionalSourceUrl": "https://www.city.shinagawa.tokyo.jp/kankyo/mizubegesuido/1010838/1010647.html"
+    }
+  ]
+},
+{
   "id": "2026-10-21",
   "date": "2026-10-21",
   "label": "2026年10月21日",
