@@ -1,7 +1,7 @@
 window.TMW_SITE_META = {
-  version: "75",
-  updatedAt: "2026-11-05",
-  updatedLabel: "2026年11月5日"
+  version: "76",
+  updatedAt: "2026-11-06",
+  updatedLabel: "2026年11月6日"
 };
 
 (() => {
